@@ -169,14 +169,33 @@
         font-weight: bold;
       }
 
-      .avoid-palette-img {
+      .avoid-palette-container {
+        position: relative;
+        display: inline-block;
         width: 100%;
         max-width: 400px;
+        margin: 1rem 0;
+      }
+
+      .avoid-palette-img {
+        width: 100%;
         height: auto;
         display: block;
-        margin: 1rem 0;
         border-radius: 2px;
         border: 1px solid rgba(0, 0, 0, 0.1);
+      }
+
+      .avoid-palette-container::after {
+        content: "✕";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 5rem;
+        color: rgba(255, 0, 0, 0.6);
+        pointer-events: none;
+        font-weight: bold;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
       }
 
       /* Footer */
@@ -256,11 +275,13 @@
             <strong>Color Palette:</strong> We kindly request our guests to
             avoid wearing the following colors, as they are reserved for the
             bride and the entourage:
-            <img
-              src="avoid-colors.jpeg"
-              alt="Colors to avoid"
-              class="avoid-palette-img"
-            />
+            <div class="avoid-palette-container">
+              <img
+                src="avoid-colors.jpeg"
+                alt="Colors to avoid"
+                class="avoid-palette-img"
+              />
+            </div>
             Please avoid white, ivory, or the shades shown above. Feel free to
             embrace other vibrant colors, florals, or classic neutrals.
           </li>
