@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gift Registry - Alaine & Michael</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* --- Design Tokens & Reset --- */
+      :root {
+        --primary-serif: "Playfair Display", Georgia, serif;
+        --secondary-sans: "Montserrat", Helvetica, sans-serif;
+        --cursive-font: "Great Vibes", cursive;
+        --color-bg: #fcf8f2;
+        --color-text: #354a3e;
+        --color-accent: #a38a75;
+        --color-accent-light: #f3ece4;
+        --color-white: #ffffff;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: var(--secondary-sans);
+        background-color: var(--color-bg);
+        color: var(--color-text);
+        line-height: 1.6;
+        text-align: center;
+      }
+
+      /* --- Typography --- */
+      h2,
+      h3 {
+        font-family: var(--primary-serif);
+        font-weight: 400;
+        letter-spacing: 1px;
+      }
+
+      h1 {
+        font-family: var(--cursive-font);
+        font-size: 3rem;
+        margin: 2rem 0;
+        color: var(--color-text);
+        font-weight: 400;
+      }
+
+      h2 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        position: relative;
+        display: inline-block;
+      }
+
+      h2::after {
+        content: "";
+        display: block;
+        width: 50%;
+        height: 1px;
+        background-color: var(--color-accent);
+        margin: 0.5rem auto 0 auto;
+      }
+
+      p {
+        font-size: 1rem;
+        color: #666;
+        margin-bottom: 1rem;
+      }
+
+      /* --- Navigation --- */
+      nav {
+        padding: 1.5rem;
+        background-color: var(--color-white);
+        border-bottom: 1px solid var(--color-accent-light);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      nav.nav-hidden {
+        transform: translateY(-100%);
+      }
+
+      nav a {
+        text-decoration: none;
+        color: var(--color-text);
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        letter-spacing: 2px;
+        margin: 0 1rem;
+        font-weight: 600;
+        transition: color 0.3s ease;
+      }
+
+      nav a:hover {
+        color: var(--color-accent);
+      }
+
+      /* --- Layout & Sections --- */
+      .container {
+        width: 90%;
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 4rem 1rem;
+      }
+
+      /* Registry Card */
+      .registry-card {
+        background-color: var(--color-white);
+        padding: 3rem 1.5rem;
+        border-radius: 4px;
+        box-shadow: 0 4px 15px rgba(163, 138, 117, 0.1);
+        border: 1px solid var(--color-accent-light);
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      .registry-card h3 {
+        margin-bottom: 1.5rem;
+        color: var(--color-text);
+      }
+
+      .registry-card p {
+        margin-bottom: 1.5rem;
+      }
+
+      /* Footer */
+      footer {
+        padding: 4rem 2rem;
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+
+      .footer-monogram {
+        width: 100px;
+        height: auto;
+        margin: 0 auto 1.5rem auto;
+        display: block;
+        opacity: 1;
+        mix-blend-mode: multiply;
+      }
+
+      /* --- Responsive Media Queries --- */
+      @media (min-width: 768px) {
+        h1 {
+          font-size: 4rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="wedding.index.html">Home</a>
+      <a href="attire.html">Attire</a>
+      <a href="registry.html">Registry</a>
+    </nav>
+
+    <header class="container">
+      <h1>Gift Registry</h1>
+      <p>Your presence at our wedding is the greatest gift of all.</p>
+    </header>
+
+    <section class="container">
+      <div class="registry-card">
+        <h2>A Note on Gifts</h2>
+        <p>
+          Should you wish to honor us with a gift, a contribution towards our
+          new life together would be most sincerely appreciated.
+        </p>
+
+        <h3>Registry Options</h3>
+        <p>
+          For those who prefer traditional gifting, we have curated a selection
+          of items at the following stores:
+        </p>
+
+        <p><em>Registry links and details will be updated soon.</em></p>
+      </div>
+    </section>
+
+    <footer>
+      <p>AK • MA • 2026</p>
+    </footer>
+
+    <script>
+      /**
+       * Initializes the navigation bar scroll behavior.
+       * Hides the nav bar on scroll down and shows it on scroll up.
+       */
+      const initNavScroll = () => {
+        const nav = document.querySelector("nav");
+        let lastScrollY = window.scrollY;
+
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > lastScrollY && window.scrollY > 100) {
+            // Scrolling down
+            nav.classList.add("nav-hidden");
+          } else {
+            // Scrolling up
+            nav.classList.remove("nav-hidden");
+          }
+          lastScrollY = window.scrollY;
+        });
+      };
+
+      // Initialize component when DOM is ready
+      document.addEventListener("DOMContentLoaded", initNavScroll);
+    </script>
+  </body>
+</html>

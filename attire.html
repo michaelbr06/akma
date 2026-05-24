@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Attire Inspiration - Alaine & Michael</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* --- Design Tokens & Reset --- */
+      :root {
+        --primary-serif: "Playfair Display", Georgia, serif;
+        --secondary-sans: "Montserrat", Helvetica, sans-serif;
+        --cursive-font: "Great Vibes", cursive;
+        --color-bg: #fcf8f2;
+        --color-text: #354a3e;
+        --color-accent: #a38a75;
+        --color-accent-light: #f3ece4;
+        --color-white: #ffffff;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: var(--secondary-sans);
+        background-color: var(--color-bg);
+        color: var(--color-text);
+        line-height: 1.6;
+        text-align: center;
+      }
+
+      /* --- Typography --- */
+      h2,
+      h3 {
+        font-family: var(--primary-serif);
+        font-weight: 400;
+        letter-spacing: 1px;
+      }
+
+      h1 {
+        font-family: var(--cursive-font);
+        font-size: 3rem;
+        margin: 2rem 0;
+        color: var(--color-text);
+        font-weight: 400;
+      }
+
+      h2 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        position: relative;
+        display: inline-block;
+      }
+
+      h2::after {
+        content: "";
+        display: block;
+        width: 50%;
+        height: 1px;
+        background-color: var(--color-accent);
+        margin: 0.5rem auto 0 auto;
+      }
+
+      p {
+        font-size: 1rem;
+        color: #666;
+        margin-bottom: 1rem;
+      }
+
+      /* --- Navigation --- */
+      nav {
+        padding: 1.5rem;
+        background-color: var(--color-white);
+        border-bottom: 1px solid var(--color-accent-light);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: var(--color-text);
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        letter-spacing: 2px;
+        margin: 0 1rem;
+        font-weight: 600;
+        transition: color 0.3s ease;
+      }
+
+      nav a:hover {
+        color: var(--color-accent);
+      }
+
+      /* --- Layout & Sections --- */
+      .container {
+        width: 90%;
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 4rem 1rem;
+      }
+
+      /* Attire Grid */
+      .attire-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .attire-card {
+        background-color: var(--color-white);
+        border-radius: 4px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(163, 138, 117, 0.1);
+        border: 1px solid var(--color-accent-light);
+      }
+
+      .attire-image {
+        width: 100%;
+        height: 400px;
+        background-color: #eee;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #999;
+        font-style: italic;
+      }
+
+      .attire-info {
+        padding: 2rem;
+      }
+
+      /* Reminders Section */
+      .reminders-section {
+        background-color: var(--color-accent-light);
+        border-radius: 4px;
+        padding: 3rem 1.5rem;
+        text-align: left;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .reminders-section h3 {
+        margin-bottom: 1.5rem;
+        text-align: center;
+      }
+
+      .reminders-list {
+        list-style: none;
+      }
+
+      .reminders-list li {
+        margin-bottom: 1rem;
+        padding-left: 1.5rem;
+        position: relative;
+      }
+
+      .reminders-list li::before {
+        content: "•";
+        color: var(--color-accent);
+        position: absolute;
+        left: 0;
+        font-weight: bold;
+      }
+
+      /* Footer */
+      footer {
+        padding: 4rem 2rem;
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+
+      /* --- Responsive Media Queries --- */
+      @media (min-width: 768px) {
+        h1 {
+          font-size: 4rem;
+        }
+
+        .attire-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="wedding.index.html">Home</a>
+      <a href="attire.html">Attire</a>
+      <a href="registry.html">Registry</a>
+    </nav>
+
+    <header class="container">
+      <h1>Attire Inspiration</h1>
+      <p>
+        We're so excited to celebrate with you! Here's a guide to help you plan
+        your look for our special day.
+      </p>
+    </header>
+
+    <section class="container">
+      <h2>Wedding Theme</h2>
+      <p>Formal / Semi-Formal Attire</p>
+
+      <div class="attire-grid">
+        <div class="attire-card">
+          <div class="attire-image">Placeholder: Gentlemen's Inspiration</div>
+          <div class="attire-info">
+            <h3>For Gentlemen</h3>
+            <p>
+              A classic suit or a smart casual would be perfect for the
+              occasion.
+            </p>
+          </div>
+        </div>
+
+        <div class="attire-card">
+          <div class="attire-image">Placeholder: Ladies' Inspiration</div>
+          <div class="attire-info">
+            <h3>For Ladies</h3>
+            <p>
+              Elegant floor-length or cocktail dresses in earthy or pastel
+              tones.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="reminders-section">
+        <h3>Important Reminders</h3>
+        <ul class="reminders-list">
+          <li>
+            <strong>Color Palette:</strong> We kindly request our guests to
+            avoid wearing white, as it is reserved for the bride.
+          </li>
+          <li>
+            <strong>Footwear:</strong> Our reception will be held in a garden
+            setting. We recommend comfortable footwear or avoiding thin
+            stilettos to ensure you can enjoy the evening.
+          </li>
+          <li>
+            <strong>Weather:</strong> The ceremony is indoors, but the reception
+            is in an open-air garden. You might want to bring a light shawl or
+            jacket just in case it gets breezy.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      <p>AK • MA • 2026</p>
+    </footer>
+  </body>
+</html>

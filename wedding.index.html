@@ -1,0 +1,697 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alaine & Michael - The Wedding</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <style>
+      /* --- Design Tokens & Reset --- */
+      :root {
+        --primary-serif: "Playfair Display", Georgia, serif;
+        --secondary-sans: "Montserrat", Helvetica, sans-serif;
+        --cursive-font: "Great Vibes", cursive;
+        --color-bg: #FCF8F2;
+        --color-text: #354a3e; /* Olive Green from screenshot */
+        --color-accent: #a38a75;
+        --color-accent-light: #f3ece4;
+        --color-white: #ffffff;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: var(--secondary-sans);
+        background-color: var(--color-bg);
+        color: var(--color-text);
+        line-height: 1.6;
+        text-align: center;
+      }
+
+      /* --- Typography --- */
+      h2,
+      h3 {
+        font-family: var(--primary-serif);
+        font-weight: 400;
+        letter-spacing: 1px;
+      }
+
+      h1 {
+        font-family: var(--cursive-font);
+        font-size: 3.5rem;
+        margin: 0.5rem 0;
+        color: var(--color-text);
+        font-weight: 400;
+      }
+
+      h2 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        position: relative;
+        display: inline-block;
+      }
+
+      h2::after {
+        content: "";
+        display: block;
+        width: 50%;
+        height: 1px;
+        background-color: var(--color-accent);
+        margin: 0.5rem auto 0 auto;
+      }
+
+      p {
+        font-size: 1rem;
+        color: #666;
+        margin-bottom: 1rem;
+      }
+
+      /* --- Navigation --- */
+      nav {
+        padding: 1.5rem;
+        background-color: var(--color-white);
+        border-bottom: 1px solid var(--color-accent-light);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      nav.nav-hidden {
+        transform: translateY(-100%);
+      }
+
+      nav a {
+        text-decoration: none;
+        color: var(--color-text);
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        letter-spacing: 2px;
+        margin: 0 1rem;
+        font-weight: 600;
+        transition: color 0.3s ease;
+      }
+
+      nav a:hover {
+        color: var(--color-accent);
+      }
+
+      /* --- Layout & Sections --- */
+      .container {
+        width: 90%;
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 4rem 1rem;
+      }
+
+      /* Hero Banner */
+      .hero {
+        background:
+          linear-gradient(rgba(253, 251, 247, 0.6), rgba(253, 251, 247, 0.6)),
+          url("Screenshot 2026-05-24 at 15.21.13.png")
+            no-repeat center center/cover;
+        padding: 4rem 1rem;
+        border-bottom: 1px solid var(--color-accent-light);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .hero-sub {
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        font-size: 0.8rem;
+        margin-bottom: 1rem;
+        color: var(--color-text);
+      }
+
+      .hero-invite {
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 0.75rem;
+        margin: 1.5rem 0;
+        line-height: 1.8;
+        color: var(--color-text);
+      }
+
+      /* Date Section in Hero */
+      .hero-date-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        margin: 1rem 0;
+        width: 100%;
+        max-width: 500px;
+      }
+
+      .date-side {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .date-side .line {
+        width: 100%;
+        height: 1px;
+        background-color: var(--color-text);
+        margin: 0.5rem 0;
+      }
+
+      .date-side .text {
+        text-transform: uppercase;
+        font-size: 0.7rem;
+        letter-spacing: 1px;
+        font-weight: 400;
+      }
+
+      .date-center {
+        text-align: center;
+        padding: 0 0.5rem;
+      }
+
+      .date-center .month {
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        letter-spacing: 3px;
+      }
+
+      .date-center .day {
+        font-size: 2.5rem;
+        line-height: 1;
+        margin: 0.1rem 0;
+        font-family: var(--primary-serif);
+      }
+
+      .date-center .year {
+        font-size: 0.8rem;
+        letter-spacing: 4px;
+      }
+
+      .hero-location {
+        margin-top: 2rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 0.8rem;
+        line-height: 1.6;
+        color: var(--color-text);
+      }
+
+      .hero-location .city {
+        margin-top: 1rem;
+        letter-spacing: 3px;
+      }
+
+      /* Details Grid */
+      .details-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+
+      .detail-card {
+        background-color: var(--color-white);
+        padding: 2.5rem;
+        border-radius: 4px;
+        box-shadow: 0 4px 15px rgba(163, 138, 117, 0.1);
+        border: 1px solid var(--color-accent-light);
+        display: flex;
+        flex-direction: column;
+      }
+
+      .location-links {
+        margin-top: auto;
+        padding-top: 1.5rem;
+      }
+
+      .location-links a {
+        color: var(--color-accent);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.9rem;
+      }
+
+      .location-links a:hover {
+        text-decoration: underline;
+      }
+
+      .location-links svg {
+        vertical-align: middle;
+        margin-right: 5px;
+        fill: var(--color-accent);
+      }
+
+      /* RSVP Form */
+      .rsvp-section {
+        background-color: var(--color-accent-light);
+        border-radius: 4px;
+        padding: 3rem 1.5rem;
+      }
+
+      .rsvp-form {
+        max-width: 500px;
+        margin: 0 auto;
+        text-align: left;
+      }
+
+      .form-group {
+        margin-bottom: 1.25rem;
+      }
+
+      .form-group label {
+        display: block;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+      }
+
+      .form-group input,
+      .form-group select {
+        width: 100%;
+        padding: 0.75rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-family: var(--secondary-sans);
+        font-size: 1rem;
+      }
+
+      .form-group input:focus,
+      .form-group select:focus {
+        outline: none;
+        border-color: var(--color-accent);
+      }
+
+      /* Buttons */
+      .btn {
+        display: inline-block;
+        background-color: var(--color-accent);
+        color: var(--color-white);
+        padding: 0.8rem 2rem;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        letter-spacing: 2px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 100%;
+        transition: background-color 0.3s ease;
+      }
+
+      .btn:hover {
+        background-color: #8c7561;
+      }
+
+      /* RSVP Section */
+      .rsvp-iframe-wrapper {
+        width: 100%;
+        max-width: 640px;
+        margin: 2rem auto 0 auto;
+        background-color: var(--color-white);
+        border-radius: 4px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(163, 138, 117, 0.1);
+      }
+
+      .rsvp-iframe-wrapper iframe {
+        display: block;
+        width: 100%;
+      }
+
+      /* FAQ Section */
+      .rsvp-iframe-wrapper {
+        width: 100%;
+        max-width: 640px;
+        margin: 2rem auto 0 auto;
+        background-color: var(--color-white);
+        border-radius: 4px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(163, 138, 117, 0.1);
+      }
+
+      .rsvp-iframe-wrapper iframe {
+        display: block;
+        width: 100%;
+      }
+
+      /* FAQ Section */
+      .faq-list {
+        text-align: left;
+        max-width: 800px;
+        margin: 2rem auto 0 auto;
+      }
+
+      .faq-item {
+        border-bottom: 1px solid var(--color-accent-light);
+        margin-bottom: 0.5rem;
+      }
+
+      .faq-question {
+        width: 100%;
+        padding: 1.25rem 0.5rem;
+        background: none;
+        border: none;
+        text-align: left;
+        font-family: var(--primary-serif);
+        font-size: 1.1rem;
+        color: var(--color-text);
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: color 0.3s ease;
+      }
+
+      .faq-question:hover {
+        color: var(--color-accent);
+      }
+
+      .faq-question::after {
+        content: "+";
+        font-size: 1.5rem;
+        color: var(--color-accent);
+        transition: transform 0.3s ease;
+        margin-left: 1rem;
+      }
+
+      .faq-item.active .faq-question::after {
+        transform: rotate(45deg);
+      }
+
+      .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.4s ease;
+        padding: 0 0.5rem;
+      }
+
+      .faq-item.active .faq-answer {
+        max-height: 500px; /* Sufficient height for content */
+        padding-bottom: 1.5rem;
+      }
+
+      .faq-answer p {
+        margin-bottom: 0.5rem;
+        font-size: 0.95rem;
+      }
+
+      .faq-answer strong {
+        font-weight: 900;
+        color: var(--color-text);
+      }
+
+      /* Footer */
+      footer {
+        padding: 4rem 2rem;
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+
+      .footer-monogram {
+        width: 100px;
+        height: auto;
+        margin: 0 auto 1.5rem auto;
+        display: block;
+        opacity: 1;
+        mix-blend-mode: multiply;
+      }
+
+      /* --- Responsive Media Queries --- */
+      @media (min-width: 768px) {
+        h1 {
+          font-size: 5rem;
+        }
+
+        .hero {
+          padding: 12rem 1rem;
+        }
+
+        .details-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .rsvp-section {
+          padding: 4rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="wedding.index.html">Home</a>
+      <a href="attire.html">Attire</a>
+      <a href="registry.html">Registry</a>
+    </nav>
+    <!-- Hero Section -->
+    <header class="hero">
+      <div class="hero-sub">Together with their families</div>
+      <h1>Alaine & Michael</h1>
+      <div class="hero-invite">
+        Invite you to join their<br />
+        wedding celebration on
+      </div>
+
+      <div class="hero-date-container">
+        <div class="date-side">
+          <div class="line"></div>
+          <div class="text">Tuesday</div>
+          <div class="line"></div>
+        </div>
+        <div class="date-center">
+          <div class="month">Oct</div>
+          <div class="day">06</div>
+          <div class="year">2026</div>
+        </div>
+        <div class="date-side">
+          <div class="line"></div>
+          <div class="text">at 1:30 PM</div>
+          <div class="line"></div>
+        </div>
+      </div>
+
+      <div class="hero-location">
+        Diocesan Shrine and Parish of<br />
+        Saint Pio of Pietrelcina
+        <div class="city">Antipolo, Rizal</div>
+      </div>
+    </header>
+
+    <!-- Details Section -->
+    <section class="container">
+      <h2>The Details</h2>
+      <div class="details-grid">
+        <div class="detail-card">
+          <h3>Ceremony </h3>
+          <p style="margin-top: 1rem"><strong>1:30 PM</strong></p>
+          <p>
+              Diocesan Shrine and Parish of 
+            <br/> Saint Pio of Pietrelcina
+            <br />(formerly known as San Pedro Calungsod Parish)
+          </p>
+          <div class="location-links">
+            <p>
+              <svg
+                width="20px"
+                height="20px"
+                viewBox="-4 0 32 32"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M118,422 C116.343,422 115,423.343 115,425 C115,426.657 116.343,428 118,428 C119.657,428 121,426.657 121,425 C121,423.343 119.657,422 118,422 L118,422 Z M118,430 C115.239,430 113,427.762 113,425 C113,422.238 115.239,420 118,420 C120.761,420 123,422.238 123,425 C123,427.762 120.761,430 118,430 L118,430 Z M118,413 C111.373,413 106,418.373 106,425 C106,430.018 116.005,445.011 118,445 C119.964,445.011 130,429.95 130,425 C130,418.373 124.627,413 118,413 L118,413 Z"
+                  transform="translate(-106.000000, -413.000000)"
+                ></path>
+              </svg>
+              <a target="_blank" href="https://maps.app.goo.gl/aP38CUPN6TeF4Y7k8"
+                >Maps</a
+              >
+              |
+              <a target="_blank" href="https://ul.waze.com/ul?place=ChIJRaB9aN24lzMRjwMEWx9WmJQ&ll=14.61843580%2C121.14874980&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location"">Waze</a>
+            </p>
+          </div>
+        </div>
+        <div class="detail-card">
+          <h3>Reception </h3>
+          <p style="margin-top: 1rem"><strong>4:30 PM</strong></p>
+          <p>
+              L' Aquinum Garden <br />
+              Kingsville Executive Village, Charlemagne St.
+            <br />(via Gate 3, Marcos Highway)
+          </p>
+          <div class="location-links">
+            <p>
+              <svg
+                width="20px"
+                height="20px"
+                viewBox="-4 0 32 32"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M118,422 C116.343,422 115,423.343 115,425 C115,426.657 116.343,428 118,428 C119.657,428 121,426.657 121,425 C121,423.343 119.657,422 118,422 L118,422 Z M118,430 C115.239,430 113,427.762 113,425 C113,422.238 115.239,420 118,420 C120.761,420 123,422.238 123,425 C123,427.762 120.761,430 118,430 L118,430 Z M118,413 C111.373,413 106,418.373 106,425 C106,430.018 116.005,445.011 118,445 C119.964,445.011 130,429.95 130,425 C130,418.373 124.627,413 118,413 L118,413 Z"
+                  transform="translate(-106.000000, -413.000000)"
+                ></path>
+              </svg>
+              <a target="_blank" href="https://maps.app.goo.gl/tJRNVJ8HbXnzFfUVA"
+                >Maps</a
+              >
+              |
+              <a
+                target="_blank"
+                href="https://ul.waze.com/ul?venue_id=79364242.793773494.3408938&overview=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location"
+                >Waze</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQs Section -->
+    <section class="container">
+      <h2>FAQs</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question">Should I really send an RSVP? I already said “yes” to the couple.</button>
+          <div class="faq-answer">
+            <p>Yes, please. This is so our coordinators have all the details they need in managing our guests. Please send us a response on or before <strong>August 30, 2026</strong>.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">May I invite a “Plus One” to the event?</button>
+          <div class="faq-answer">
+            <p>Please message the couple first if you’re bringing anyone along on or before the RSVP deadline. This event is strictly by invitation only. We can only accommodate the number of seats indicated in the invitation we sent you.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">What if I said “YES” and suddenly I cannot attend?</button>
+          <div class="faq-answer">
+            <p>We thank you for finding the time to spend this special day with us. We understand and will miss you if you couldn’t make it.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">What if I said “NO” and suddenly I can attend, can I just show up?</button>
+          <div class="faq-answer">
+            <p><strong>No. Please do not show up unannounced.</strong> We would appreciate it if you could notify us for any changes in your decision on or before <strong>August 30, 2026</strong>.</p>
+            <p>Afterwards, please notify us to check if there are still any available seats for you.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">What happens if I’m late to the event?</button>
+          <div class="faq-answer">
+            <p>We would highly appreciate it if you weren’t. But just in case, our coordinators will guide you to your seats. <strong>Please don’t use the main entrances.</strong></p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Can I take pictures and videos during the event?</button>
+          <div class="faq-answer">
+            <p>We ask all of our guests to honor our request for an <em>unplugged</em> ceremony. We have hired a documentary team for taking pictures and videos. Kindly keep your phones in “Silent” and tuck them away in the meantime.</p>
+            <p>However, you are more than welcome to keep some memories of the ceremony using your personal devices <strong>not until after the groom kisses the bride.</strong></p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Wait. Aren’t you married?</button>
+          <div class="faq-answer">
+            <p>Urgggh. Yes, we’re married. This date and time was the original plan. Michael had other plans and got married last year.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RSVP Section -->
+    <section class="container">
+      <div class="rsvp-section">
+        <h2>RSVP</h2>
+        <p>Kindly reply by August 30, 2026</p>
+
+        <div class="rsvp-iframe-wrapper">
+          <iframe 
+            src="https://docs.google.com/forms/d/e/1FAIpQLSfgEgnT_qNY75YlJ5eKtZrETz2iFAhcbm-TMh6ny730r8_8Aw/viewform?embedded=true" 
+            width="640" 
+            height="1550" 
+            frameborder="0" 
+            marginheight="0" 
+            marginwidth="0"
+          >Loading…</iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>AK • MA • 2026 </p>
+    </footer>
+
+    <script>
+      /**
+       * Initializes the navigation bar scroll behavior.
+       * Hides the nav bar on scroll down and shows it on scroll up.
+       */
+      const initNavScroll = () => {
+        const nav = document.querySelector('nav');
+        let lastScrollY = window.scrollY;
+
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > lastScrollY && window.scrollY > 100) {
+            // Scrolling down
+            nav.classList.add('nav-hidden');
+          } else {
+            // Scrolling up
+            nav.classList.remove('nav-hidden');
+          }
+          lastScrollY = window.scrollY;
+        });
+      };
+
+      /**
+       * Initializes the FAQ accordion functionality.
+       * Ensures only one accordion item is open at a time.
+       */
+      const initFAQ = () => {
+        const faqQuestions = document.querySelectorAll('.faq-question');
+
+        faqQuestions.forEach(question => {
+          question.addEventListener('click', () => {
+            const item = question.parentElement;
+            const isActive = item.classList.contains('active');
+
+            // Close all items
+            document.querySelectorAll('.faq-item').forEach(faqItem => {
+              faqItem.classList.remove('active');
+            });
+
+            // If the clicked item wasn't active, open it
+            if (!isActive) {
+              item.classList.add('active');
+            }
+          });
+        });
+      };
+
+      // Initialize components when DOM is ready
+      document.addEventListener('DOMContentLoaded', () => {
+        initFAQ();
+        initNavScroll();
+      });
+    </script>
+  </body>
+</html>
