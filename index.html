@@ -775,6 +775,8 @@
             frameborder="0"
             marginheight="0"
             marginwidth="0"
+            loading="lazy"
+            title="RSVP Form"
             >Loading…</iframe
           >
         </div>
@@ -834,6 +836,12 @@
 
       // Initialize components when DOM is ready
       document.addEventListener("DOMContentLoaded", () => {
+        // Prevent browser from restoring scroll position or jumping to iframe focus
+        if ("scrollRestoration" in history) {
+          history.scrollRestoration = "manual";
+        }
+        window.scrollTo(0, 0);
+
         initFAQ();
         initNavScroll();
       });

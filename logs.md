@@ -1,5 +1,9 @@
 # Change Log
 
+## [2026-05-27] - Fixed Automatic Scroll Jump on Load
+- Added `window.scrollTo(0, 0)` and set `history.scrollRestoration = "manual"` in `index.html` to ensure the page starts at the top.
+- Added `loading="lazy"` to the RSVP iframe to prevent it from grabbing focus/scrolling the page on load.
+
 ## [2026-05-27] - Optimized Attire Images for Mobile
 - Switched from aspect-ratio cropping to `max-height: 500px` and `object-fit: contain` in `attire.html`.
 - Added 1.5rem margin/padding around images to give them more breathing room.
