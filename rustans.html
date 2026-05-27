@@ -148,6 +148,22 @@
         background-color: #8c7561;
       }
 
+      .instruction-pages {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+        margin-top: 1.5rem;
+      }
+
+      .instruction-img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        border-radius: 4px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
       /* Footer */
       footer {
         padding: 4rem 2rem;
@@ -175,21 +191,26 @@
       <div class="logo-container">
         <img src="rustans-log.png" alt="Rustan's" />
       </div>
-      <h1>Rustan's Registry</h1>
     </header>
 
     <section class="container">
       <div class="rustans-card">
-        <h2>Registry Details</h2>
-        <p style="margin-top: 1.5rem">
-          Our registry at Rustan's Department Store is currently being
-          finalized.
-        </p>
-        <p>
-          You may check back here soon for the direct link or visit any Rustan's
-          branch and inquire about the <strong>Alaine & Michael Wedding Registry</strong>.
-        </p>
-        <a href="registry.html" class="btn">Back to Registry</a>
+        <h2>Instructions</h2>
+        <div class="instruction-pages">
+          <img
+            src="Screenshot 2026-05-27 at 17.06.49.png"
+            alt="Registry Instructions Page 1"
+            class="instruction-img"
+          />
+          <img
+            src="Screenshot 2026-05-27 at 17.07.02.png"
+            alt="Registry Instructions Page 2"
+            class="instruction-img"
+          />
+        </div>
+        <div style="margin-top: 2rem">
+          <a href="registry.html" class="btn">Back to Registry</a>
+        </div>
       </div>
     </section>
 

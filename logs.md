@@ -1,5 +1,30 @@
 # Change Log
 
+## [2026-05-27] - Improved Barcode Styling
+- Styled the barcode image in `sm-store.html` to better match the registry card container.
+- Added a white background, border, and subtle shadow to the barcode container.
+- Ensured the barcode is responsive and centered within the instructions.
+
+## [2026-05-27] - Updated SM Store Registry with Barcode
+- Added the barcode image (`sm-store-registry-even-tocde.png`) to the in-store gifting instructions in `sm-store.html`.
+- Styled the barcode for responsiveness and better layout.
+
+## [2026-05-27] - Finalized SM Store Registry Details
+- Updated `sm-store.html` with specific instructions for online and in-store gifting.
+- Added a highlighted box for the SM Store Event Code (8245227).
+- Styled the instructions for better readability on both mobile and desktop.
+
+## [2026-05-27] - Added SM Store Registry Option
+- Created `sm-store.html` page for the SM Store registry details.
+- Updated `registry.html` to include the SM Store registry button with `sm-logo.png`.
+- Documented registry options for both Rustan's and SM Store.
+
+## [2026-05-27] - Optimized Rustan's Registry Instructions
+- Adjusted instruction images in `rustans.html` to match the width of the registry card container.
+- Ensured images are fully responsive with `max-width: 100%`.
+- Updated `rustans.html` to include instruction screenshots as responsive "pages".
+- Added `rustans-log.png` at the top of the page.
+
 ## [2026-05-27] - Added Rustan's Registry Option
 - Added a visual button for Rustan's Registry in `registry.html` using the Rustan's logo.
 - Created `rustans.html` page to provide details about the Rustan's registry.

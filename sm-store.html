@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gift Registry - Alaine & Michael</title>
+    <title>SM Store Registry - Alaine & Michael</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -38,18 +38,17 @@
       }
 
       /* --- Typography --- */
-      h2,
-      h3 {
-        font-family: var(--primary-serif);
-        font-weight: 400;
-        letter-spacing: 1px;
-      }
-
       h1 {
         font-family: var(--cursive-font);
         font-size: 3rem;
         margin: 2rem 0;
         color: var(--color-text);
+        font-weight: 400;
+      }
+
+      h2,
+      h3 {
+        font-family: var(--primary-serif);
         font-weight: 400;
       }
 
@@ -67,6 +66,13 @@
         height: 1px;
         background-color: var(--color-accent);
         margin: 0.5rem auto 0 auto;
+      }
+
+      h3 {
+        font-size: 1.3rem;
+        margin: 2rem 0 1rem 0;
+        color: var(--color-text);
+        text-align: left;
       }
 
       p {
@@ -113,7 +119,6 @@
         padding: 4rem 1rem;
       }
 
-      /* Registry Card */
       .registry-card {
         background-color: var(--color-white);
         padding: 3rem 1.5rem;
@@ -124,43 +129,92 @@
         margin: 0 auto;
       }
 
-      .registry-card h3 {
-        margin-bottom: 1.5rem;
-        color: var(--color-text);
+      .logo-container {
+        max-width: 150px;
+        margin: 0 auto 2rem auto;
       }
 
-      .registry-card p {
-        margin-bottom: 1.5rem;
+      .logo-container img {
+        width: 100%;
+        height: auto;
       }
 
-      /* Registry Buttons */
-      .registry-options {
-        display: flex;
-        justify-content: center;
-        gap: 2rem;
-        margin-top: 2rem;
-        flex-wrap: wrap;
+      .registry-options-content {
+        text-align: left;
+        max-width: 600px;
+        margin: 0 auto;
       }
 
-      .registry-btn {
-        display: block;
-        max-width: 200px;
+      .registry-options-content ol {
+        padding-left: 1.5rem;
+        margin-bottom: 2rem;
+      }
+
+      .registry-options-content li {
+        margin-bottom: 0.8rem;
+        color: #666;
+      }
+
+      .event-code-box {
+        background-color: var(--color-accent-light);
+        padding: 1.5rem;
+        border-radius: 4px;
+        margin: 1.5rem 0;
+        text-align: center;
+      }
+
+      .barcode-container {
+        margin: 2rem 0;
+        text-align: center;
+        background-color: #fff;
         padding: 1rem;
         border: 1px solid var(--color-accent-light);
         border-radius: 4px;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        background-color: var(--color-white);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
       }
 
-      .registry-btn:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 5px 15px rgba(163, 138, 117, 0.2);
-      }
-
-      .registry-logo {
+      .registry-barcode {
         width: 100%;
+        max-width: 500px;
         height: auto;
         display: block;
+        margin: 0 auto;
+      }
+
+      .event-code {
+        font-family: var(--secondary-sans);
+        font-weight: 700;
+        font-size: 1.5rem;
+        letter-spacing: 2px;
+        color: var(--color-text);
+        display: block;
+        margin-top: 0.5rem;
+      }
+
+      .btn {
+        display: inline-block;
+        background-color: var(--color-accent);
+        color: var(--color-white);
+        padding: 0.8rem 2rem;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        letter-spacing: 2px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        margin-top: 1rem;
+      }
+
+      .btn:hover {
+        background-color: #8c7561;
+      }
+
+      a.inline-link {
+        color: var(--color-accent);
+        text-decoration: underline;
+        font-weight: 600;
       }
 
       /* Footer */
@@ -171,19 +225,13 @@
         text-transform: uppercase;
       }
 
-      .footer-monogram {
-        width: 100px;
-        height: auto;
-        margin: 0 auto 1.5rem auto;
-        display: block;
-        opacity: 1;
-        mix-blend-mode: multiply;
-      }
-
       /* --- Responsive Media Queries --- */
       @media (min-width: 768px) {
         h1 {
           font-size: 4rem;
+        }
+        .registry-card {
+          padding: 4rem 3rem;
         }
       }
     </style>
@@ -196,31 +244,69 @@
     </nav>
 
     <header class="container">
-      <h1>Gift Registry</h1>
-      <p>Your presence at our wedding is the greatest gift of all.</p>
+      <div class="logo-container">
+        <img src="sm-logo.png" alt="SM Store" />
+      </div>
     </header>
 
     <section class="container">
       <div class="registry-card">
-        <h2>A Note on Gifts</h2>
-        <p>
-          Should you wish to honor us with a gift, a contribution towards our
-          new life together would be most sincerely appreciated.
-        </p>
+        <h2>How to Gift</h2>
 
-        <h3>Registry Options</h3>
-        <p>
-          For those who prefer traditional gifting, we have curated a selection
-          of items at the following stores:
-        </p>
+        <div class="registry-options-content">
+          <h3>Option 1: Shop Online (Fast & Easy)</h3>
+          <ol>
+            <li>
+              <strong
+                >Visit our
+                <a
+                  href="https://www.thesmstoregiftregistry.com/eventdetail/6a0ae4bc3b0350ba6b4e080f?eventCode=8245227"
+                  target="_blank"
+                  class="inline-link"
+                  >SM Registry Link</a
+                >.</strong
+              >
+              Please note that you’ll need to Create/Sign-in your account with
+              SM Store Gift Registry for this option.
+            </li>
+            <li>
+              <strong>Choose a gift:</strong> Browse the list, select the
+              item(s) you’d like to give, and add them to your cart.
+            </li>
+            <li>
+              <strong>Check out:</strong> Follow the prompts to pay securely
+              online.
+            </li>
+          </ol>
 
-        <div class="registry-options">
-          <a href="rustans.html" class="registry-btn">
-            <img src="rustans-log.png" alt="Rustan's" class="registry-logo" />
-          </a>
-          <a href="sm-store.html" class="registry-btn">
-            <img src="sm-logo.png" alt="SM Store" class="registry-logo" />
-          </a>
+          <h3>Option 2: Shop In-Store (At Any SM Store)</h3>
+          <ol>
+            <li>
+              <strong>Visit the Registry Counter:</strong> Head to the Customer
+              Service or Gift Registry desk at any SM Department Store
+              nationwide.
+            </li>
+            <li>
+              <strong>Present the event code below.</strong>
+              <div class="barcode-container">
+                <img
+                  src="sm-store-registry-even-tocde.png"
+                  alt="SM Registry Barcode"
+                  class="registry-barcode"
+                />
+              </div>
+            </li>
+            <li>
+              <strong>Shop & Scan:</strong> Pick up the items from the
+              department store shelves. When you pay at the cashier, make sure
+              they scan the registry barcode so the item gets marked as
+              "purchased" on our list.
+            </li>
+          </ol>
+        </div>
+
+        <div style="margin-top: 2rem">
+          <a href="registry.html" class="btn">Back to Registry</a>
         </div>
       </div>
     </section>
@@ -232,25 +318,19 @@
     <script>
       /**
        * Initializes the navigation bar scroll behavior.
-       * Hides the nav bar on scroll down and shows it on scroll up.
        */
       const initNavScroll = () => {
         const nav = document.querySelector("nav");
         let lastScrollY = window.scrollY;
-
         window.addEventListener("scroll", () => {
           if (window.scrollY > lastScrollY && window.scrollY > 100) {
-            // Scrolling down
             nav.classList.add("nav-hidden");
           } else {
-            // Scrolling up
             nav.classList.remove("nav-hidden");
           }
           lastScrollY = window.scrollY;
         });
       };
-
-      // Initialize component when DOM is ready
       document.addEventListener("DOMContentLoaded", initNavScroll);
     </script>
   </body>
