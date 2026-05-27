@@ -1,5 +1,9 @@
 # Change Log
 
+## [2026-05-27] - UI Enhancements on Attire Page
+- Centered the `.avoid-palette-container` in `attire.html` to improve layout on larger screens.
+- Adjusted attire image padding and margins for better breathing room.
+
 ## [2026-05-27] - Fixed Automatic Scroll Jump on Load
 - Added `window.scrollTo(0, 0)` and set `history.scrollRestoration = "manual"` in `index.html` to ensure the page starts at the top.
 - Added `loading="lazy"` to the RSVP iframe to prevent it from grabbing focus/scrolling the page on load.
