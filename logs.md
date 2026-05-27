@@ -1,8 +1,8 @@
 # Change Log
 
 ## [2026-05-27] - Optimized Attire Images for Mobile
-- Adjusted `.attire-image` aspect ratio from `9/16` to `4/5` in `attire.html` to reduce height on mobile.
-- Added `object-position: center top` to maintain focus on the attire/subject when cropped.
+- Switched from aspect-ratio cropping to `max-height: 500px` and `object-fit: contain` in `attire.html`.
+- This ensures images are not "too tall" on mobile while preventing any cropping.
 
 ## [2026-05-27] - Optimized RSVP Form for Mobile
 - Fixed nested media query bug in `index.html`.

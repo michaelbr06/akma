@@ -126,11 +126,11 @@
 
       .attire-image {
         width: 100%;
-        aspect-ratio: 4 / 5; /* Reduced height for mobile optimization */
-        background-color: #eee;
+        height: auto;
+        max-height: 500px; /* Limits height on mobile without cropping */
+        background-color: #f9f9f9;
         display: block;
-        object-fit: cover;
-        object-position: center top;
+        object-fit: contain; /* Ensures the whole image is visible */
       }
 
       .attire-info {
