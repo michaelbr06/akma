@@ -1,5 +1,10 @@
 # Change Log
 
+## [2026-05-27] - Added Rustan's Registry Option
+- Added a visual button for Rustan's Registry in `registry.html` using the Rustan's logo.
+- Created `rustans.html` page to provide details about the Rustan's registry.
+- Implemented hover effects and responsive styling for the registry buttons.
+
 ## [2026-05-27] - UI Enhancements on Attire Page
 - Centered the `.avoid-palette-container` in `attire.html` to improve layout on larger screens.
 - Adjusted attire image padding and margins for better breathing room.

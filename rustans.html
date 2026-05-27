@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gift Registry - Alaine & Michael</title>
+    <title>Rustan's Registry - Alaine & Michael</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -38,13 +38,6 @@
       }
 
       /* --- Typography --- */
-      h2,
-      h3 {
-        font-family: var(--primary-serif);
-        font-weight: 400;
-        letter-spacing: 1px;
-      }
-
       h1 {
         font-family: var(--cursive-font);
         font-size: 3rem;
@@ -54,10 +47,12 @@
       }
 
       h2 {
+        font-family: var(--primary-serif);
         font-size: 2rem;
         margin-bottom: 1.5rem;
         position: relative;
         display: inline-block;
+        font-weight: 400;
       }
 
       h2::after {
@@ -113,8 +108,7 @@
         padding: 4rem 1rem;
       }
 
-      /* Registry Card */
-      .registry-card {
+      .rustans-card {
         background-color: var(--color-white);
         padding: 3rem 1.5rem;
         border-radius: 4px;
@@ -124,43 +118,34 @@
         margin: 0 auto;
       }
 
-      .registry-card h3 {
-        margin-bottom: 1.5rem;
-        color: var(--color-text);
+      .logo-container {
+        max-width: 250px;
+        margin: 0 auto 2rem auto;
       }
 
-      .registry-card p {
-        margin-bottom: 1.5rem;
-      }
-
-      /* Registry Buttons */
-      .registry-options {
-        display: flex;
-        justify-content: center;
-        gap: 2rem;
-        margin-top: 2rem;
-        flex-wrap: wrap;
-      }
-
-      .registry-btn {
-        display: block;
-        max-width: 200px;
-        padding: 1rem;
-        border: 1px solid var(--color-accent-light);
-        border-radius: 4px;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        background-color: var(--color-white);
-      }
-
-      .registry-btn:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 5px 15px rgba(163, 138, 117, 0.2);
-      }
-
-      .registry-logo {
+      .logo-container img {
         width: 100%;
         height: auto;
-        display: block;
+      }
+
+      .btn {
+        display: inline-block;
+        background-color: var(--color-accent);
+        color: var(--color-white);
+        padding: 0.8rem 2rem;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        letter-spacing: 2px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        margin-top: 1rem;
+      }
+
+      .btn:hover {
+        background-color: #8c7561;
       }
 
       /* Footer */
@@ -169,15 +154,6 @@
         font-size: 0.8rem;
         letter-spacing: 1px;
         text-transform: uppercase;
-      }
-
-      .footer-monogram {
-        width: 100px;
-        height: auto;
-        margin: 0 auto 1.5rem auto;
-        display: block;
-        opacity: 1;
-        mix-blend-mode: multiply;
       }
 
       /* --- Responsive Media Queries --- */
@@ -196,29 +172,24 @@
     </nav>
 
     <header class="container">
-      <h1>Gift Registry</h1>
-      <p>Your presence at our wedding is the greatest gift of all.</p>
+      <div class="logo-container">
+        <img src="rustans-log.png" alt="Rustan's" />
+      </div>
+      <h1>Rustan's Registry</h1>
     </header>
 
     <section class="container">
-      <div class="registry-card">
-        <h2>A Note on Gifts</h2>
-        <p>
-          Should you wish to honor us with a gift, a contribution towards our
-          new life together would be most sincerely appreciated.
+      <div class="rustans-card">
+        <h2>Registry Details</h2>
+        <p style="margin-top: 1.5rem">
+          Our registry at Rustan's Department Store is currently being
+          finalized.
         </p>
-
-        <h3>Registry Options</h3>
         <p>
-          For those who prefer traditional gifting, we have curated a selection
-          of items at the following stores:
+          You may check back here soon for the direct link or visit any Rustan's
+          branch and inquire about the <strong>Alaine & Michael Wedding Registry</strong>.
         </p>
-
-        <div class="registry-options">
-          <a href="rustans.html" class="registry-btn">
-            <img src="rustans-log.png" alt="Rustan's" class="registry-logo" />
-          </a>
-        </div>
+        <a href="registry.html" class="btn">Back to Registry</a>
       </div>
     </section>
 
@@ -227,27 +198,18 @@
     </footer>
 
     <script>
-      /**
-       * Initializes the navigation bar scroll behavior.
-       * Hides the nav bar on scroll down and shows it on scroll up.
-       */
       const initNavScroll = () => {
         const nav = document.querySelector("nav");
         let lastScrollY = window.scrollY;
-
         window.addEventListener("scroll", () => {
           if (window.scrollY > lastScrollY && window.scrollY > 100) {
-            // Scrolling down
             nav.classList.add("nav-hidden");
           } else {
-            // Scrolling up
             nav.classList.remove("nav-hidden");
           }
           lastScrollY = window.scrollY;
         });
       };
-
-      // Initialize component when DOM is ready
       document.addEventListener("DOMContentLoaded", initNavScroll);
     </script>
   </body>
