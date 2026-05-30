@@ -1,5 +1,10 @@
 # Change Log
 
+## [2026-05-30] - Updated Wedding Party Names
+- Replaced placeholders in `entourage.html` with the official names of the wedding party.
+- Updated "Maid of Honor" to "Maids of Honor" to accommodate two names.
+- Verified all names for Parents, Sponsors, Best Man, Maids of Honor, Groomsmen, Bridesmaids, Secondary Sponsors, Bearers, and Flower Girls.
+
 ## [2026-05-30] - Added Dress Code to Entourage Page
 - Added a "Dress Code" section to `entourage.html` highlighting the reserved color palette.
 - Included the palette image `Screenshot 2026-05-25 at 00.42.26.png` for reference.
