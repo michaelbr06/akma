@@ -1,5 +1,16 @@
 # Change Log
 
+## [2026-05-30] - Added Dress Code to Entourage Page
+- Added a "Dress Code" section to `entourage.html` highlighting the reserved color palette.
+- Included the palette image `Screenshot 2026-05-25 at 00.42.26.png` for reference.
+- Specified attire requirements for gentlemen (Formal Suits / Barong Tagalog) and ladies (Long Gowns / Formal Filipiñana).
+
+## [2026-05-30] - Added Entourage Page
+- Created `entourage.html` with a placeholder structure for the wedding party.
+- Implemented a design consistent with the project's color palette and typography.
+- Used a responsive card-based layout for different entourage groups (Parents, Sponsors, etc.).
+- Ensured the navigation bar is present but does not link to the Entourage page itself, as requested.
+
 ## [2026-05-27] - Improved Barcode Styling
 - Styled the barcode image in `sm-store.html` to better match the registry card container.
 - Added a white background, border, and subtle shadow to the barcode container.

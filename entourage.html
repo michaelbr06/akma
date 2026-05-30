@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Entourage - Alaine & Michael</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* --- Design Tokens & Reset --- */
+      :root {
+        --primary-serif: "Playfair Display", Georgia, serif;
+        --secondary-sans: "Montserrat", Helvetica, sans-serif;
+        --cursive-font: "Great Vibes", cursive;
+        --color-bg: #fcf8f2;
+        --color-text: #354a3e;
+        --color-accent: #a38a75;
+        --color-accent-light: #f3ece4;
+        --color-white: #ffffff;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: var(--secondary-sans);
+        background-color: var(--color-bg);
+        color: var(--color-text);
+        line-height: 1.6;
+        text-align: center;
+      }
+
+      /* --- Typography --- */
+      h1 {
+        font-family: var(--cursive-font);
+        font-size: 3rem;
+        margin: 2rem 0;
+        color: var(--color-text);
+        font-weight: 400;
+      }
+
+      h2 {
+        font-family: var(--primary-serif);
+        font-weight: 400;
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        position: relative;
+        display: inline-block;
+      }
+
+      h2::after {
+        content: "";
+        display: block;
+        width: 50%;
+        height: 1px;
+        background-color: var(--color-accent);
+        margin: 0.5rem auto 0 auto;
+      }
+
+      h3 {
+        font-family: var(--primary-serif);
+        font-size: 1.5rem;
+        margin: 2rem 0 1rem 0;
+        color: var(--color-text);
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      p {
+        font-size: 1rem;
+        color: #666;
+        margin-bottom: 0.5rem;
+      }
+
+      .role-label {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: var(--color-accent);
+        font-weight: 600;
+        margin-top: 1.5rem;
+        display: block;
+      }
+
+      .name-list {
+        margin-bottom: 2rem;
+      }
+
+      .name-item {
+        font-family: var(--primary-serif);
+        font-size: 1.2rem;
+        margin-bottom: 0.25rem;
+      }
+
+      /* --- Navigation --- */
+      nav {
+        padding: 1.5rem;
+        background-color: var(--color-white);
+        border-bottom: 1px solid var(--color-accent-light);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      nav.nav-hidden {
+        transform: translateY(-100%);
+      }
+
+      nav a {
+        text-decoration: none;
+        color: var(--color-text);
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        letter-spacing: 2px;
+        margin: 0 1rem;
+        font-weight: 600;
+        transition: color 0.3s ease;
+      }
+
+      nav a:hover {
+        color: var(--color-accent);
+      }
+
+      /* --- Layout & Sections --- */
+      .container {
+        width: 90%;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 4rem 1.5rem;
+      }
+
+      .entourage-section {
+        background-color: var(--color-white);
+        padding: 3.5rem 2rem;
+        border-radius: 4px;
+        box-shadow: 0 4px 15px rgba(163, 138, 117, 0.1);
+        border: 1px solid var(--color-accent-light);
+        margin-bottom: 3rem;
+      }
+
+      .entourage-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .entourage-group {
+        margin-bottom: 1rem;
+      }
+
+      .sponsor-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .avoid-palette-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        margin: 1.5rem auto;
+        width: 100%;
+        max-width: 400px;
+      }
+
+      .avoid-palette-img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 2px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        margin: auto;
+      }
+
+      /* Footer */
+      footer {
+        padding: 4rem 2rem;
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+
+      /* --- Responsive Media Queries --- */
+      @media (min-width: 768px) {
+        h1 {
+          font-size: 4rem;
+        }
+        .container {
+          padding: 6rem 2rem;
+        }
+        .sponsor-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .entourage-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .full-width {
+          grid-column: 1 / -1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="attire.html">Attire</a>
+      <a href="registry.html">Registry</a>
+    </nav>
+
+    <header class="container" style="padding-bottom: 0">
+      <h1>The Entourage</h1>
+      <p>The wonderful people who will be standing by our side.</p>
+    </header>
+
+    <main class="container">
+      <!-- Dress Code Section -->
+      <section class="entourage-section">
+        <h2>Dress Code</h2>
+        <p>
+          We are excited to see you all dressed in our wedding colors! 
+          Below is the color palette reserved exclusively for the wedding party.
+        </p>
+        <div class="avoid-palette-container">
+          <img
+            src="Screenshot 2026-05-25 at 00.42.26.png"
+            alt="Entourage Color Palette"
+            class="avoid-palette-img"
+          />
+        </div>
+        <p>
+          <strong>For Gentlemen:</strong> Formal Suits / Barong Tagalog<br />
+          <strong>For Ladies:</strong> Long Gowns / Formal Filipiñana
+        </p>
+      </section>
+
+      <!-- Parents Section -->
+      <section class="entourage-section">
+        <h2>Parents</h2>
+        <div class="entourage-grid">
+          <div class="entourage-group">
+            <span class="role-label">Parents of the Groom</span>
+            <div class="name-list">
+              <div class="name-item">[Name of Father]</div>
+              <div class="name-item">[Name of Mother]</div>
+            </div>
+          </div>
+          <div class="entourage-group">
+            <span class="role-label">Parents of the Bride</span>
+            <div class="name-list">
+              <div class="name-item">[Name of Father]</div>
+              <div class="name-item">[Name of Mother]</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Principal Sponsors -->
+      <section class="entourage-section">
+        <h2>Principal Sponsors</h2>
+        <div class="sponsor-grid">
+          <div class="name-list">
+            <div class="name-item">[Name of Sponsor]</div>
+            <div class="name-item">[Name of Sponsor]</div>
+            <div class="name-item">[Name of Sponsor]</div>
+            <div class="name-item">[Name of Sponsor]</div>
+          </div>
+          <div class="name-list">
+            <div class="name-item">[Name of Sponsor]</div>
+            <div class="name-item">[Name of Sponsor]</div>
+            <div class="name-item">[Name of Sponsor]</div>
+            <div class="name-item">[Name of Sponsor]</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Maid of Honor & Best Man -->
+      <section class="entourage-section">
+        <div class="entourage-grid">
+          <div class="entourage-group">
+            <h2>Best Man</h2>
+            <div class="name-list">
+              <div class="name-item">[Name of Best Man]</div>
+            </div>
+          </div>
+          <div class="entourage-group">
+            <h2>Maid of Honor</h2>
+            <div class="name-list">
+              <div class="name-item">[Name of Maid of Honor]</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Groomsmen & Bridesmaids -->
+      <section class="entourage-section">
+        <div class="entourage-grid">
+          <div class="entourage-group">
+            <h3>Groomsmen</h3>
+            <div class="name-list">
+              <div class="name-item">[Name of Groomsman]</div>
+              <div class="name-item">[Name of Groomsman]</div>
+              <div class="name-item">[Name of Groomsman]</div>
+            </div>
+          </div>
+          <div class="entourage-group">
+            <h3>Bridesmaids</h3>
+            <div class="name-list">
+              <div class="name-item">[Name of Bridesmaid]</div>
+              <div class="name-item">[Name of Bridesmaid]</div>
+              <div class="name-item">[Name of Bridesmaid]</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Secondary Sponsors -->
+      <section class="entourage-section">
+        <h2>Secondary Sponsors</h2>
+        <div class="entourage-grid">
+          <div class="entourage-group">
+            <span class="role-label">Candle</span>
+            <div class="name-list">
+              <div class="name-item">[Name]</div>
+              <div class="name-item">[Name]</div>
+            </div>
+          </div>
+          <div class="entourage-group">
+            <span class="role-label">Veil</span>
+            <div class="name-list">
+              <div class="name-item">[Name]</div>
+              <div class="name-item">[Name]</div>
+            </div>
+          </div>
+          <div class="entourage-group full-width" style="margin-top: -1rem">
+            <span class="role-label">Cord</span>
+            <div class="name-list">
+              <div class="name-item">[Name]</div>
+              <div class="name-item">[Name]</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Bearers & Flower Girls -->
+      <section class="entourage-section">
+        <div class="entourage-grid">
+          <div class="entourage-group">
+            <h3>Bearers</h3>
+            <div class="name-list">
+              <div class="name-item">[Name] — Ring Bearer</div>
+              <div class="name-item">[Name] — Coin Bearer</div>
+              <div class="name-item">[Name] — Bible Bearer</div>
+            </div>
+          </div>
+          <div class="entourage-group">
+            <h3>Flower Girls</h3>
+            <div class="name-list">
+              <div class="name-item">[Name]</div>
+              <div class="name-item">[Name]</div>
+              <div class="name-item">[Name]</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>AK • MA • 2026</p>
+    </footer>
+
+    <script>
+      /**
+       * Initializes the navigation bar scroll behavior.
+       */
+      const initNavScroll = () => {
+        const nav = document.querySelector("nav");
+        let lastScrollY = window.scrollY;
+
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > lastScrollY && window.scrollY > 100) {
+            nav.classList.add("nav-hidden");
+          } else {
+            nav.classList.remove("nav-hidden");
+          }
+          lastScrollY = window.scrollY;
+        });
+      };
+
+      document.addEventListener("DOMContentLoaded", () => {
+        initNavScroll();
+      });
+    </script>
+  </body>
+</html>
