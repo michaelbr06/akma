@@ -1,5 +1,9 @@
 # Change Log
 
+## [2026-05-30] - Adjusted Entourage Details
+- Updated Secondary Sponsors: Changed Candle sponsor from Ms. Daniela Allex Mallon to Ms. Angel Basilio.
+- Simplified Bearer labels: Shortened "Ring Bearer", "Coin Bearer", and "Bible Bearer" to "Ring", "Coin", and "Bible".
+
 ## [2026-05-30] - Updated Wedding Party Names
 - Replaced placeholders in `entourage.html` with the official names of the wedding party.
 - Updated "Maid of Honor" to "Maids of Honor" to accommodate two names.
