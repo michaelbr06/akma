@@ -1,5 +1,13 @@
 # Change Log
 
+## [2026-05-31] - Enhanced Dress Code Gallery in Entourage Page
+- Replaced the single Dress Code palette image with a custom carousel in `entourage.html`.
+- Implemented single-image display with navigation arrows (previous/next).
+- Optimized image responsiveness by capping the carousel width at 500px and centering it.
+- Added logic to dynamically show/hide arrows based on the carousel position.
+- Integrated new color palette images: `parents-color.jpeg`, `nin-colors.jpeg`, `moh-color.jpeg`, `bm-color.jpeg`, and `bestman-grooms-color.jpeg`.
+- Used CSS scroll-snap and smooth scrolling for a native carousel feel.
+
 ## [2026-05-30] - Adjusted Entourage Details
 - Updated Secondary Sponsors: Changed Candle sponsor from Ms. Daniela Allex Mallon to Ms. Angel Basilio.
 - Simplified Bearer labels: Shortened "Ring Bearer", "Coin Bearer", and "Bible Bearer" to "Ring", "Coin", and "Bible".
