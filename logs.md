@@ -1,5 +1,17 @@
 # Change Log
 
+## [2026-06-03] - Optimized Entourage Dress Code Images
+- Implemented `max-height: 75vh` and `width: auto` on dress code carousel images in `entourage.html`.
+- This ensures the entire image height is visible within the viewport on all devices, including laptops.
+- Maintained responsive scaling and aspect ratio for the portrait-style palette images.
+
+## [2026-06-03] - Updated Entourage Color Palettes
+- Updated `entourage.html` with new, high-quality color palette images for the wedding party.
+- Replaced `moh-color.jpeg` with `moh-palette.jpeg` (Maids of Honor).
+- Replaced `bm-color.jpeg` with `bmaids-color-palette.jpeg` (Bridesmaids).
+- Replaced `bestman-grooms-color.jpeg` with `bm-dresscode-new.jpeg` (Bestman & Groomsmen).
+- Maintained carousel functionality and responsiveness for the updated images.
+
 ## [2026-05-31] - Enhanced Dress Code Gallery in Entourage Page
 - Replaced the single Dress Code palette image with a custom carousel in `entourage.html`.
 - Implemented single-image display with navigation arrows (previous/next).
