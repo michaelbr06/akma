@@ -180,13 +180,13 @@
         margin: 0;
         scroll-snap-type: x mandatory;
         -webkit-overflow-scrolling: touch;
-        scroll-behavior: smooth;
         width: 100%;
       }
 
       .scroll-item {
         flex: 0 0 100%;
-        scroll-snap-align: center;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
         padding: 0 5px; /* Slightly reduced padding */
       }
 
@@ -550,15 +550,25 @@
         };
 
         prevBtn.addEventListener("click", () => {
-          scrollContainer.scrollBy({
-            left: -scrollContainer.clientWidth,
+          const width = scrollContainer.clientWidth;
+          const currentScroll = scrollContainer.scrollLeft;
+          // Target the previous discrete index
+          const target = Math.max(0, Math.floor((currentScroll - 10) / width) * width);
+          
+          scrollContainer.scrollTo({
+            left: target,
             behavior: "smooth",
           });
         });
 
         nextBtn.addEventListener("click", () => {
-          scrollContainer.scrollBy({
-            left: scrollContainer.clientWidth,
+          const width = scrollContainer.clientWidth;
+          const currentScroll = scrollContainer.scrollLeft;
+          // Target the next discrete index
+          const target = Math.ceil((currentScroll + 10) / width) * width;
+
+          scrollContainer.scrollTo({
+            left: target,
             behavior: "smooth",
           });
         });

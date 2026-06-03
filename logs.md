@@ -1,5 +1,10 @@
 # Change Log
 
+## [2026-06-03] - Fixed iOS Carousel Skipping Issue
+- Resolved "image skipping" bug on iOS Safari by removing `scroll-behavior: smooth` from CSS and relying on JavaScript `scrollTo`.
+- Updated carousel logic to use discrete target index calculations instead of relative `scrollBy`.
+- Changed `scroll-snap-align` to `start` and added `scroll-snap-stop: always` to ensure more stable snapping on mobile browsers.
+
 ## [2026-06-03] - Optimized Entourage Dress Code Images
 - Implemented `max-height: 75vh` and `width: auto` on dress code carousel images in `entourage.html`.
 - This ensures the entire image height is visible within the viewport on all devices, including laptops.
