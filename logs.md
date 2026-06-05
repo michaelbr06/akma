@@ -1,5 +1,11 @@
 # Change Log
 
+## [2026-06-05] - Added Bank QR Codes to Registry
+- Integrated bank transfer QR codes (`BPI_AKMA.png`, `GT_AKMA.png`, `bdo-qr.jpeg`) into the `registry.html` page.
+- Implemented a responsive `.qr-codes` container with flex-wrap and consistent styling.
+- Added hover effects and shadows to the QR code images for a polished UI.
+- Positioned the QR codes within the "A Note on Gifts" section for better context.
+
 ## [2026-06-03] - Fixed iOS Carousel Skipping Issue
 - Resolved "image skipping" bug on iOS Safari by removing `scroll-behavior: smooth` from CSS and relying on JavaScript `scrollTo`.
 - Updated carousel logic to use discrete target index calculations instead of relative `scrollBy`.

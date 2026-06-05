@@ -148,7 +148,9 @@
         padding: 1rem;
         border: 1px solid var(--color-accent-light);
         border-radius: 4px;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
         background-color: var(--color-white);
       }
 
@@ -161,6 +163,29 @@
         width: 100%;
         height: auto;
         display: block;
+      }
+
+      /* QR Codes */
+      .qr-codes {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-top: 2rem;
+      }
+
+      .qr-code-img {
+        width: 100%;
+        max-width: 250px;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(163, 138, 117, 0.15);
+        border: 1px solid var(--color-accent-light);
+        transition: transform 0.3s ease;
+      }
+
+      .qr-code-img:hover {
+        transform: scale(1.05);
       }
 
       /* Footer */
@@ -203,10 +228,6 @@
     <section class="container">
       <div class="registry-card">
         <h2>A Note on Gifts</h2>
-        <p>
-          Should you wish to honor us with a gift, a contribution towards our
-          new life together would be most sincerely appreciated.
-        </p>
 
         <h3>Registry Options</h3>
         <p>
@@ -219,8 +240,22 @@
             <img src="rustans-log.png" alt="Rustan's" class="registry-logo" />
           </a>
           <a href="sm-store.html" class="registry-btn">
-            <img src="sm-logo.png" alt="SM Store" class="registry-logo" />
+            <img src="sm-logo-new.png" alt="SM Store" class="registry-logo" />
           </a>
+        </div>
+        <br />
+        <br />
+        <br />
+
+        <p>
+          Should you wish to honor us with a gift, a contribution towards our
+          new life together would be most sincerely appreciated.
+        </p>
+
+        <div class="qr-codes">
+          <img src="BPI_AKMA.png" alt="BPI" class="qr-code-img" />
+          <img src="GT_AKMA.png" alt="GoTyme" class="qr-code-img" />
+          <img src="bdo-qr.jpeg" alt="BDO" class="qr-code-img" />
         </div>
       </div>
     </section>
