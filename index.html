@@ -283,7 +283,6 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        position: relative;
       }
 
       .timeline-dot {
@@ -294,8 +293,6 @@
         border: 1.5px solid var(--color-accent);
         margin-top: 6px;
         flex-shrink: 0;
-        position: relative;
-        z-index: 1;
       }
 
       .timeline-item.major .timeline-dot {
@@ -305,13 +302,10 @@
       }
 
       .timeline-stem {
-        position: absolute;
-        top: 6px;
-        bottom: calc(-1.85rem - 6px);
-        width: 1.5px;
-        background-color: var(--color-accent);
-        left: 50%;
-        transform: translateX(-50%);
+        width: 1px;
+        flex: 1;
+        background-color: color-mix(in srgb, var(--color-accent) 35%, white);
+        margin: 3px 0;
       }
 
       .timeline-item:last-child .timeline-stem {
@@ -533,17 +527,12 @@
         /* Timeline Desktop */
         .timeline-card {
           padding: 3rem 2.5rem;
-          max-width: 600px;
         }
 
         .timeline-item {
-          grid-template-columns: 1fr 24px 1fr;
+          grid-template-columns: 110px 24px 1fr;
           column-gap: 20px;
           padding-bottom: 2.1rem;
-        }
-
-        .timeline-stem {
-          bottom: calc(-2.1rem - 6px);
         }
 
         .timeline-time {
@@ -598,7 +587,7 @@
         </div>
         <div class="date-side">
           <div class="line"></div>
-          <div class="text">at 12:30 PM</div>
+          <div class="text">at 1:30 PM</div>
           <div class="line"></div>
         </div>
       </div>
@@ -691,40 +680,51 @@
               <span class="timeline-dot"></span>
               <span class="timeline-stem"></span>
             </div>
-            <div class="timeline-desc">Start of Ceremony</div>
+            <div class="timeline-desc">
+              Assembly<br />
+              Start of Ceremony
+            </div>
           </div>
           <div class="timeline-item">
-            <div class="timeline-time">2:30 PM</div>
+            <div class="timeline-time">02:30 PM</div>
             <div class="timeline-rail">
               <span class="timeline-dot"></span>
               <span class="timeline-stem"></span>
             </div>
             <div class="timeline-desc">
               End of Ceremony<br />
-              Travel to Reception
+              Pictorial
             </div>
           </div>
           <div class="timeline-item">
-            <div class="timeline-time">3:00 PM</div>
+            <div class="timeline-time">03:00 PM</div>
             <div class="timeline-rail">
               <span class="timeline-dot"></span>
               <span class="timeline-stem"></span>
             </div>
-            <div class="timeline-desc">Cocktail Hour</div>
+            <div class="timeline-desc">Travel to Reception</div>
           </div>
-          <div class="timeline-item major">
-            <div class="timeline-time">4:00 PM</div>
+          <div class="timeline-item">
+            <div class="timeline-time">03:30 PM</div>
             <div class="timeline-rail">
               <span class="timeline-dot"></span>
               <span class="timeline-stem"></span>
             </div>
             <div class="timeline-desc">
-              Registration<br />
-              Start of Program
+              Cocktail Hour<br />
+              Registration
             </div>
           </div>
+          <div class="timeline-item major">
+            <div class="timeline-time">04:30 PM</div>
+            <div class="timeline-rail">
+              <span class="timeline-dot"></span>
+              <span class="timeline-stem"></span>
+            </div>
+            <div class="timeline-desc">Start of Program</div>
+          </div>
           <div class="timeline-item">
-            <div class="timeline-time">5:00 PM</div>
+            <div class="timeline-time">05:00 PM</div>
             <div class="timeline-rail">
               <span class="timeline-dot"></span>
               <span class="timeline-stem"></span>
@@ -732,23 +732,15 @@
             <div class="timeline-desc">Dinner</div>
           </div>
           <div class="timeline-item">
-            <div class="timeline-time">6:30 PM</div>
+            <div class="timeline-time">06:30 PM</div>
             <div class="timeline-rail">
               <span class="timeline-dot"></span>
               <span class="timeline-stem"></span>
             </div>
             <div class="timeline-desc">
               End of Program<br />
-              After Party
+              Party time
             </div>
-          </div>
-          <div class="timeline-item major">
-            <div class="timeline-time">8:00 PM</div>
-            <div class="timeline-rail">
-              <span class="timeline-dot"></span>
-              <span class="timeline-stem"></span>
-            </div>
-            <div class="timeline-desc">End</div>
           </div>
         </div>
       </div>
@@ -882,16 +874,14 @@
             <p>
               Please do not feel obligated to provide a gift. If you would still
               like to honor us with a gesture, we have set up a small fund for
-              our new life together, which you can find in our
+              our new life together, which you can find on our
               <a href="/registry.html"><strong>Gift Registry</strong></a> page.
             </p>
           </div>
         </div>
 
         <div class="faq-item">
-          <button class="faq-question">
-            How can I support the couple on their Wedding Day?
-          </button>
+          <button class="faq-question">How can I support the couple?</button>
           <div class="faq-answer">
             <ul
               style="text-align: left; padding-left: 1.5rem; font-size: 0.95rem"
@@ -904,7 +894,7 @@
                 Prepare for an inclement weather. It could be a hot or a rainy
                 day. Kindly bring your mobile fans and/or umbrellas.
               </li>
-              <li>Arrive on or before 12:30 PM to avoid any delays.</li>
+              <li>Arrive before 1:30 PM to avoid any delays.</li>
               <li>Visit the booths of our vendors at the reception.</li>
             </ul>
           </div>

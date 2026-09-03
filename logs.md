@@ -1,5 +1,17 @@
 # Change Log
 
+## [2026-09-03] - Updated When Section Schedule
+- Updated the "When" itinerary timeline in `index.html` to reflect the latest schedule:
+  - 12:30 PM: Assembly / Start of Ceremony
+  - 02:30 PM: End of Ceremony / Pictorial
+  - 03:00 PM: Travel to Reception
+  - 03:30 PM: Cocktail Hour / Registration
+  - 04:30 PM: Start of Program
+  - 05:00 PM: Dinner
+  - 06:30 PM: End of Program / Party time
+- Split comma-separated activities onto separate lines using `<br />` breaks for clean multi-line presentation.
+
+
 ## [2026-09-03] - Centered When Timeline on Larger Screens
 - Updated `.timeline-item` grid template columns on desktop (`min-width: 768px`) to `1fr 24px 1fr`, creating a balanced, centered layout with times right-aligned and descriptions left-aligned relative to the central timeline rail.
 - Adjusted desktop `.timeline-card` `max-width` to `600px` for balanced visual proportions.
