@@ -1,5 +1,11 @@
 # Change Log
 
+## [2026-09-03] - Centered When Timeline on Larger Screens
+- Updated `.timeline-item` grid template columns on desktop (`min-width: 768px`) to `1fr 24px 1fr`, creating a balanced, centered layout with times right-aligned and descriptions left-aligned relative to the central timeline rail.
+- Adjusted desktop `.timeline-card` `max-width` to `600px` for balanced visual proportions.
+- Preserved the left-aligned vertical flow (`84px 22px 1fr`) on mobile devices to ensure full responsiveness across smaller screens.
+
+
 ## [2026-09-03] - Formatted 4:00 PM and 6:30 PM Multi-Line Activities
 - Applied multi-line formatting with `<br />` breaks to 4:00 PM ("Registration" / "Start of Program") and 6:30 PM ("End of Program" / "After Party").
 - Maintained the bold, prominent styling (`.timeline-item.major`) for the 4:00 PM activity and preserved standard weight for 6:30 PM.
