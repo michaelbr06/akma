@@ -18,6 +18,7 @@
         --cursive-font: "Great Vibes", cursive;
         --color-bg: #fcf8f2;
         --color-text: #354a3e; /* Olive Green from screenshot */
+        --color-text-soft: #5c6b62; /* lighter olive for minor timeline entries */
         --color-accent: #a38a75;
         --color-accent-light: #f3ece4;
         --color-white: #ffffff;
@@ -254,6 +255,95 @@
         fill: var(--color-accent);
       }
 
+      /* Timeline / When Section */
+      .timeline-card {
+        background-color: var(--color-white);
+        padding: 2.5rem 1.5rem;
+        border-radius: 4px;
+        box-shadow: 0 4px 15px rgba(163, 138, 117, 0.1);
+        border: 1px solid var(--color-accent-light);
+        max-width: 680px;
+        margin: 2rem auto 0 auto;
+      }
+
+      .timeline-item {
+        display: grid;
+        grid-template-columns: 84px 22px 1fr;
+        column-gap: 14px;
+        text-align: left;
+        padding-bottom: 1.85rem;
+      }
+
+      .timeline-item:last-child {
+        padding-bottom: 0;
+      }
+
+      .timeline-rail {
+        grid-column: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+      }
+
+      .timeline-dot {
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        background-color: var(--color-white);
+        border: 1.5px solid var(--color-accent);
+        margin-top: 6px;
+        flex-shrink: 0;
+        position: relative;
+        z-index: 1;
+      }
+
+      .timeline-item.major .timeline-dot {
+        width: 12px;
+        height: 12px;
+        background-color: var(--color-accent);
+      }
+
+      .timeline-stem {
+        position: absolute;
+        top: 6px;
+        bottom: calc(-1.85rem - 6px);
+        width: 1.5px;
+        background-color: var(--color-accent);
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .timeline-item:last-child .timeline-stem {
+        display: none;
+      }
+
+      .timeline-time {
+        grid-column: 1;
+        font-family: var(--secondary-sans);
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 1px;
+        color: var(--color-accent);
+        text-transform: uppercase;
+        text-align: right;
+        padding-top: 2px;
+      }
+
+      .timeline-desc {
+        grid-column: 3;
+        font-family: var(--primary-serif);
+        font-size: 1.1rem;
+        color: var(--color-text-soft);
+        line-height: 1.4;
+      }
+
+      .timeline-item.major .timeline-desc {
+        font-weight: 700;
+        font-size: 1.3rem;
+        color: var(--color-text);
+      }
+
       /* RSVP Form */
       .rsvp-section {
         background-color: var(--color-accent-light);
@@ -440,6 +530,33 @@
           grid-template-columns: repeat(2, 1fr);
         }
 
+        /* Timeline Desktop */
+        .timeline-card {
+          padding: 3rem 2.5rem;
+        }
+
+        .timeline-item {
+          grid-template-columns: 110px 24px 1fr;
+          column-gap: 20px;
+          padding-bottom: 2.1rem;
+        }
+
+        .timeline-stem {
+          bottom: calc(-2.1rem - 6px);
+        }
+
+        .timeline-time {
+          font-size: 0.9rem;
+        }
+
+        .timeline-desc {
+          font-size: 1.2rem;
+        }
+
+        .timeline-item.major .timeline-desc {
+          font-size: 1.4rem;
+        }
+
         .rsvp-section {
           padding: 4rem;
         }
@@ -480,7 +597,7 @@
         </div>
         <div class="date-side">
           <div class="line"></div>
-          <div class="text">at 1:30 PM</div>
+          <div class="text">at 12:30 PM</div>
           <div class="line"></div>
         </div>
       </div>
@@ -494,11 +611,12 @@
 
     <!-- Details Section -->
     <section class="container">
-      <h2>The Details</h2>
+      <h2>Where</h2>
       <div class="details-grid">
         <div class="detail-card">
           <h3>Ceremony</h3>
-          <p style="margin-top: 1rem"><strong>1:30 PM</strong></p>
+          <br />
+
           <p>
             Diocesan Shrine and Parish of
             <br />
@@ -529,7 +647,8 @@
         </div>
         <div class="detail-card">
           <h3>Reception</h3>
-          <p style="margin-top: 1rem"><strong>4:30 PM</strong></p>
+          <br />
+
           <p>
             L' Aquinum Garden <br />
             Kingsville Executive Village, Charlemagne St.
@@ -555,6 +674,80 @@
                 >Maps</a
               >
             </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- When Section -->
+    <section class="container">
+      <h2>When</h2>
+      <div class="timeline-card">
+        <div class="timeline">
+          <div class="timeline-item major">
+            <div class="timeline-time">12:30 PM</div>
+            <div class="timeline-rail">
+              <span class="timeline-dot"></span>
+              <span class="timeline-stem"></span>
+            </div>
+            <div class="timeline-desc">Start of Ceremony</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-time">2:30 PM</div>
+            <div class="timeline-rail">
+              <span class="timeline-dot"></span>
+              <span class="timeline-stem"></span>
+            </div>
+            <div class="timeline-desc">
+              End of Ceremony<br />
+              Travel to Reception
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-time">3:00 PM</div>
+            <div class="timeline-rail">
+              <span class="timeline-dot"></span>
+              <span class="timeline-stem"></span>
+            </div>
+            <div class="timeline-desc">Cocktail Hour</div>
+          </div>
+          <div class="timeline-item major">
+            <div class="timeline-time">4:00 PM</div>
+            <div class="timeline-rail">
+              <span class="timeline-dot"></span>
+              <span class="timeline-stem"></span>
+            </div>
+            <div class="timeline-desc">
+              Registration<br />
+              Start of Program
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-time">5:00 PM</div>
+            <div class="timeline-rail">
+              <span class="timeline-dot"></span>
+              <span class="timeline-stem"></span>
+            </div>
+            <div class="timeline-desc">Dinner</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-time">6:30 PM</div>
+            <div class="timeline-rail">
+              <span class="timeline-dot"></span>
+              <span class="timeline-stem"></span>
+            </div>
+            <div class="timeline-desc">
+              End of Program<br />
+              After Party
+            </div>
+          </div>
+          <div class="timeline-item major">
+            <div class="timeline-time">8:00 PM</div>
+            <div class="timeline-rail">
+              <span class="timeline-dot"></span>
+              <span class="timeline-stem"></span>
+            </div>
+            <div class="timeline-desc">End</div>
           </div>
         </div>
       </div>
@@ -730,6 +923,19 @@
               Garden.
             </p>
             <p>A landmark near the said gate is a 7-Eleven store.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Will dietary restrictions and allergens be labeled?
+          </button>
+          <div class="faq-answer">
+            <p>
+              Yes! All buffet stations and dish cards will clearly display
+              common allergens and dietary labels so you can build your plate
+              with confidence.
+            </p>
           </div>
         </div>
 

@@ -1,5 +1,27 @@
 # Change Log
 
+## [2026-09-03] - Formatted 4:00 PM and 6:30 PM Multi-Line Activities
+- Applied multi-line formatting with `<br />` breaks to 4:00 PM ("Registration" / "Start of Program") and 6:30 PM ("End of Program" / "After Party").
+- Maintained the bold, prominent styling (`.timeline-item.major`) for the 4:00 PM activity and preserved standard weight for 6:30 PM.
+- Maintained seamless connection of the timeline stem across all multi-line items.
+
+## [2026-09-03] - Formatted 2:30 PM Multi-Line Schedule Text & Resolved Stem Gap
+- Formatted the 2:30 PM schedule description with an inline break (`<br />`) to cleanly separate "End of Ceremony" and "Travel to Reception".
+- Replaced multiple adjacent `.timeline-desc` sibling containers with a single description block so CSS Grid keeps all item content within a single row.
+- Resolved the timeline stem gap between 2:30 PM and 3:30 PM by allowing the `.timeline-rail` to expand to the full height of the two-line description and seamlessly bridge to the next node.
+
+## [2026-09-03] - Connected Timeline Nodes with Continuous Line
+- Updated `.timeline-rail`, `.timeline-dot`, and `.timeline-stem` styling in `index.html` so connecting stems bridge between all timeline nodes.
+- Positioned the stem to extend through item padding to meet subsequent nodes, using the wedding accent color (`var(--color-accent)`).
+- Layered dots above the connecting stem with `z-index: 1` to create clean intersections for both major and minor event nodes.
+- Added responsive stem bottom calculation for desktop viewports (`bottom: calc(-2.1rem - 6px)`).
+
+## [2026-09-03] - Added When Timeline Section to Index Page
+- Added a new "When" schedule section to `index.html` featuring a responsive timeline.
+- Styled timeline with wedding theme tokens, including custom markers, connecting line, and responsive card container.
+- Added responsive layout: desktop displays balanced side-by-side time and event schedule, while mobile provides a clean left-aligned vertical flow.
+- Included complete wedding day itinerary: Ceremony (12:30 PM), Reception travel (2:30 PM), Cocktail hour (3:30 PM), Registration/Program (4:00 PM), Dinner (5:00 PM), After party (6:30 PM), and End (8:00 PM).
+
 ## [2026-06-05] - Added Bank QR Codes to Registry
 - Integrated bank transfer QR codes (`BPI_AKMA.png`, `GT_AKMA.png`, `bdo-qr.jpeg`) into the `registry.html` page.
 - Implemented a responsive `.qr-codes` container with flex-wrap and consistent styling.
