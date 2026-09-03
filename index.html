@@ -18,7 +18,6 @@
         --cursive-font: "Great Vibes", cursive;
         --color-bg: #fcf8f2;
         --color-text: #354a3e; /* Olive Green from screenshot */
-        --color-text-soft: #5c6b62; /* lighter olive for minor timeline entries */
         --color-accent: #a38a75;
         --color-accent-light: #f3ece4;
         --color-white: #ffffff;
@@ -108,10 +107,16 @@
 
       /* --- Layout & Sections --- */
       .container {
-        width: 90%;
-        max-width: 1100px;
-        margin: 0 auto;
+        width: 100%;
         padding: 4rem 1rem;
+      }
+
+      section.container {
+        background:
+          linear-gradient(rgba(253, 251, 247, 0.6), rgba(253, 251, 247, 0.6)),
+          url("Screenshot 2026-05-24 at 15.21.13.png") no-repeat center
+            center/cover;
+        border-bottom: 1px solid var(--color-accent-light);
       }
 
       /* Hero Banner */
@@ -220,7 +225,8 @@
         display: grid;
         grid-template-columns: 1fr;
         gap: 2rem;
-        margin-top: 2rem;
+        max-width: 1000px;
+        margin: 2rem auto 0 auto;
       }
 
       .detail-card {
@@ -271,11 +277,6 @@
         grid-template-columns: 84px 22px 1fr;
         column-gap: 14px;
         text-align: left;
-        padding-bottom: 1.85rem;
-      }
-
-      .timeline-item:last-child {
-        padding-bottom: 0;
       }
 
       .timeline-rail {
@@ -289,22 +290,18 @@
         width: 9px;
         height: 9px;
         border-radius: 50%;
-        background-color: var(--color-white);
-        border: 1.5px solid var(--color-accent);
-        margin-top: 6px;
+        background-color: var(--color-accent);
+        margin-top: 8px;
         flex-shrink: 0;
       }
 
-      .timeline-item.major .timeline-dot {
-        width: 12px;
-        height: 12px;
-        background-color: var(--color-accent);
-      }
-
+      /* Stem stretches to fill the full row height (set by the margin-bottom
+         on .timeline-time / .timeline-desc below), so it runs unbroken down
+         to the next dot instead of stopping at the edge of the text. */
       .timeline-stem {
-        width: 1px;
+        width: 1.5px;
         flex: 1;
-        background-color: color-mix(in srgb, var(--color-accent) 35%, white);
+        background-color: rgba(163, 138, 117, 0.35);
         margin: 3px 0;
       }
 
@@ -321,21 +318,24 @@
         color: var(--color-accent);
         text-transform: uppercase;
         text-align: right;
-        padding-top: 2px;
+        padding-top: 6px;
+        line-height: 1.5;
+        margin-bottom: 1.85rem;
       }
 
       .timeline-desc {
         grid-column: 3;
         font-family: var(--primary-serif);
-        font-size: 1.1rem;
-        color: var(--color-text-soft);
-        line-height: 1.4;
+        font-size: 1.15rem;
+        font-weight: 400;
+        color: var(--color-text);
+        line-height: 1.5;
+        margin-bottom: 1.85rem;
       }
 
-      .timeline-item.major .timeline-desc {
-        font-weight: 700;
-        font-size: 1.3rem;
-        color: var(--color-text);
+      .timeline-item:last-child .timeline-time,
+      .timeline-item:last-child .timeline-desc {
+        margin-bottom: 0;
       }
 
       /* RSVP Form */
@@ -343,6 +343,8 @@
         background-color: var(--color-accent-light);
         border-radius: 4px;
         padding: 3rem 1.5rem;
+        max-width: 800px;
+        margin: 0 auto;
       }
 
       .rsvp-form {
@@ -520,6 +522,10 @@
           padding: 12rem 1rem;
         }
 
+        section.container {
+          padding: 5rem 1.5rem;
+        }
+
         .details-grid {
           grid-template-columns: repeat(2, 1fr);
         }
@@ -532,19 +538,22 @@
         .timeline-item {
           grid-template-columns: 110px 24px 1fr;
           column-gap: 20px;
-          padding-bottom: 2.1rem;
         }
 
         .timeline-time {
           font-size: 0.9rem;
+          padding-top: 7px;
+          margin-bottom: 2.1rem;
         }
 
         .timeline-desc {
           font-size: 1.2rem;
+          margin-bottom: 2.1rem;
         }
 
-        .timeline-item.major .timeline-desc {
-          font-size: 1.4rem;
+        .timeline-item:last-child .timeline-time,
+        .timeline-item:last-child .timeline-desc {
+          margin-bottom: 0;
         }
 
         .rsvp-section {
@@ -674,30 +683,24 @@
       <h2>When</h2>
       <div class="timeline-card">
         <div class="timeline">
-          <div class="timeline-item major">
+          <div class="timeline-item">
             <div class="timeline-time">12:30 PM</div>
             <div class="timeline-rail">
               <span class="timeline-dot"></span>
               <span class="timeline-stem"></span>
             </div>
-            <div class="timeline-desc">
-              Assembly<br />
-              Start of Ceremony
-            </div>
+            <div class="timeline-desc">Assembly<br />Start of Ceremony</div>
           </div>
           <div class="timeline-item">
-            <div class="timeline-time">02:30 PM</div>
+            <div class="timeline-time">2:30 PM</div>
             <div class="timeline-rail">
               <span class="timeline-dot"></span>
               <span class="timeline-stem"></span>
             </div>
-            <div class="timeline-desc">
-              End of Ceremony<br />
-              Pictorial
-            </div>
+            <div class="timeline-desc">End of Ceremony<br />Pictorial</div>
           </div>
           <div class="timeline-item">
-            <div class="timeline-time">03:00 PM</div>
+            <div class="timeline-time">3:00 PM</div>
             <div class="timeline-rail">
               <span class="timeline-dot"></span>
               <span class="timeline-stem"></span>
@@ -705,18 +708,15 @@
             <div class="timeline-desc">Travel to Reception</div>
           </div>
           <div class="timeline-item">
-            <div class="timeline-time">03:30 PM</div>
+            <div class="timeline-time">3:30 PM</div>
             <div class="timeline-rail">
               <span class="timeline-dot"></span>
               <span class="timeline-stem"></span>
             </div>
-            <div class="timeline-desc">
-              Cocktail Hour<br />
-              Registration
-            </div>
+            <div class="timeline-desc">Registration<br />Cocktail Hour</div>
           </div>
-          <div class="timeline-item major">
-            <div class="timeline-time">04:30 PM</div>
+          <div class="timeline-item">
+            <div class="timeline-time">4:30 PM</div>
             <div class="timeline-rail">
               <span class="timeline-dot"></span>
               <span class="timeline-stem"></span>
@@ -724,7 +724,7 @@
             <div class="timeline-desc">Start of Program</div>
           </div>
           <div class="timeline-item">
-            <div class="timeline-time">05:00 PM</div>
+            <div class="timeline-time">5:00 PM</div>
             <div class="timeline-rail">
               <span class="timeline-dot"></span>
               <span class="timeline-stem"></span>
@@ -732,15 +732,12 @@
             <div class="timeline-desc">Dinner</div>
           </div>
           <div class="timeline-item">
-            <div class="timeline-time">06:30 PM</div>
+            <div class="timeline-time">6:30 PM</div>
             <div class="timeline-rail">
               <span class="timeline-dot"></span>
               <span class="timeline-stem"></span>
             </div>
-            <div class="timeline-desc">
-              End of Program<br />
-              Party time
-            </div>
+            <div class="timeline-desc">End of Program<br />After Party</div>
           </div>
         </div>
       </div>

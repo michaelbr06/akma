@@ -1,5 +1,19 @@
 # Change Log
 
+## [2026-09-03] - Added Garden Screenshot Background Across Page Sections
+- Applied the garden hero screenshot background (`Screenshot 2026-05-24 at 15.21.13.png`) with warm semi-transparent gradient overlay (`rgba(253, 251, 247, 0.6)`) and subtle bottom border (`1px solid var(--color-accent-light)`) to all page sections (`section.container`).
+- Set `width: 100%` on `.container` and `section.container` so the garden background spans edge-to-edge across the viewport like the hero banner.
+- Preserved centered, balanced content widths for all section children (`.details-grid` max 1000px, `.timeline-card` max 600px/680px, `.faq-list` max 800px, and `.rsvp-section` max 800px).
+- Maintained the HTML format of all sections starting from the Details section (`<section class="container">`) with no build steps or external dependencies.
+
+
+## [2026-09-03] - Horizontally Aligned When Timeline Time Slot with First Activity
+- Aligned the horizontal text of `.timeline-time` with the first line of `.timeline-desc` in the When timeline grid:
+  - Added `line-height: 1.5` and increased `padding-top` from `2px` to `6px` on `.timeline-time` for mobile screens, resolving the offset caused by font-size and line-height disparity.
+  - Added `padding-top: 7px` to desktop `.timeline-time` (`@media (min-width: 768px)`) to keep optical alignment precise with the `1.2rem` description text.
+  - Adjusted `.timeline-dot` `margin-top` from `6px` to `8px` to center the marker with the aligned first line of text while preserving the continuous stem.
+
+
 ## [2026-09-03] - Updated When Section Schedule
 - Updated the "When" itinerary timeline in `index.html` to reflect the latest schedule:
   - 12:30 PM: Assembly / Start of Ceremony
