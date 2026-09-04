@@ -1,5 +1,11 @@
 # Change Log
 
+## [2026-09-04] - Replaced RSVP Section with Tally Message Link
+- Replaced the RSVP section and Google Form embed in `index.html` with a "Message for the Couple" section containing a prominent button linking to the Tally message form (`https://tally.so/r/EkOyxq`).
+- Styled the `.btn` component with responsive padding, hover transition, and uppercase typography matching the wedding theme accent color (`var(--color-accent)`).
+- Replaced `.rsvp-section` with `.message-section` and cleaned up unused RSVP form and iframe styling while preserving the `<section class="container">` layout format.
+
+
 ## [2026-09-04] - Made Footer Monogram Responsive and Scaled to Device Dimensions
 - Increased the size of the footer monogram (`.footer-monogram`) in `index.html` from a static 100px width to responsive sizing using viewport-relative units (`clamp()` and `vw`).
 - Configured mobile sizing to `clamp(150px, 35vw, 220px)` and desktop/tablet sizing (`@media (min-width: 768px)`) to `clamp(220px, 18vw, 280px)` to dynamically scale relative to device screen dimensions while maintaining visual balance.
