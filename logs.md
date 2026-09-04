@@ -1,5 +1,15 @@
 # Change Log
 
+## [2026-09-04] - Made Footer Monogram Responsive and Scaled to Device Dimensions
+- Increased the size of the footer monogram (`.footer-monogram`) in `index.html` from a static 100px width to responsive sizing using viewport-relative units (`clamp()` and `vw`).
+- Configured mobile sizing to `clamp(150px, 35vw, 220px)` and desktop/tablet sizing (`@media (min-width: 768px)`) to `clamp(220px, 18vw, 280px)` to dynamically scale relative to device screen dimensions while maintaining visual balance.
+
+
+## [2026-09-04] - Replaced Footer Text with Monogram Logo
+- Replaced the footer text (`<p>AK • MA • 2026</p>`) in `index.html` with the monogram SVG logo (`monogram-svg.svg`).
+- Applied the `.footer-monogram` class with centered margins (`margin: 0 auto;`) and responsive sizing for clean vertical and horizontal alignment within the footer.
+
+
 ## [2026-09-03] - Added Garden Screenshot Background Across Page Sections
 - Applied the garden hero screenshot background (`Screenshot 2026-05-24 at 15.21.13.png`) with warm semi-transparent gradient overlay (`rgba(253, 251, 247, 0.6)`) and subtle bottom border (`1px solid var(--color-accent-light)`) to all page sections (`section.container`).
 - Set `width: 100%` on `.container` and `section.container` so the garden background spans edge-to-edge across the viewport like the hero banner.
