@@ -77,7 +77,7 @@
 
       /* --- Navigation --- */
       nav {
-        padding: 1.5rem;
+        padding: 1.25rem 0.75rem;
         background-color: var(--color-white);
         border-bottom: 1px solid var(--color-accent-light);
         position: sticky;
@@ -91,12 +91,13 @@
       }
 
       nav a {
+        display: inline-block;
         text-decoration: none;
         color: var(--color-text);
         text-transform: uppercase;
-        font-size: 0.8rem;
-        letter-spacing: 2px;
-        margin: 0 1rem;
+        font-size: 0.75rem;
+        letter-spacing: 1.5px;
+        margin: 0.3rem 0.6rem;
         font-weight: 600;
         transition: color 0.3s ease;
       }
@@ -339,6 +340,11 @@
       }
 
       /* Message Section */
+      #message-for-the-couple,
+      #message {
+        scroll-margin-top: 5rem;
+      }
+
       .message-section {
         background-color: var(--color-accent-light);
         border-radius: 4px;
@@ -349,6 +355,12 @@
 
       .message-section p {
         margin-bottom: 2rem;
+      }
+
+      .message-section iframe {
+        border: none;
+        width: 100%;
+        display: block;
       }
 
       /* Buttons */
@@ -505,6 +517,16 @@
           margin-bottom: 0;
         }
 
+        nav {
+          padding: 1.5rem;
+        }
+
+        nav a {
+          font-size: 0.8rem;
+          letter-spacing: 2px;
+          margin: 0 1rem;
+        }
+
         .message-section {
           padding: 4rem;
         }
@@ -521,6 +543,7 @@
       <a href="index.html">Home</a>
       <a href="attire.html">Attire</a>
       <a href="registry.html">Registry</a>
+      <a href="#message-for-the-couple">Message for the Couple</a>
     </nav>
     <!-- Hero Section -->
     <header class="hero">
@@ -692,8 +715,8 @@
     </section>
 
     <!-- Message Section -->
-    <section class="container">
-      <div class="message-section">
+    <section class="container" id="message-for-the-couple">
+      <div class="message-section" id="message">
         <h2>Message for the Couple</h2>
         <iframe
           data-tally-src="https://tally.so/embed/EkOyxq?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
@@ -706,25 +729,41 @@
           title="Message for the Couple"
         ></iframe>
         <script>
-          var d = document,
-            w = "https://tally.so/widgets/embed.js",
-            v = function () {
-              "undefined" != typeof Tally
-                ? Tally.loadEmbeds()
-                : d
-                    .querySelectorAll("iframe[data-tally-src]:not([src])")
-                    .forEach(function (e) {
-                      e.src = e.dataset.tallySrc;
-                    });
+          /**
+           * Dynamically loads Tally embed widgets and initializes dynamic height resizing.
+           */
+          const initTallyEmbed = () => {
+            const tallyScriptUrl = "https://tally.so/widgets/embed.js";
+
+            /**
+             * Loads embeds via Tally API or assigns fallback src if Tally script is unavailable.
+             */
+            const loadEmbeds = () => {
+              if (typeof Tally !== "undefined") {
+                Tally.loadEmbeds();
+              } else {
+                document
+                  .querySelectorAll("iframe[data-tally-src]:not([src])")
+                  .forEach((iframe) => {
+                    iframe.src = iframe.dataset.tallySrc;
+                  });
+              }
             };
-          if ("undefined" != typeof Tally) v();
-          else if (d.querySelector('script[src="' + w + '"]') == null) {
-            var s = d.createElement("script");
-            ((s.src = w),
-              (s.onload = v),
-              (s.onerror = v),
-              d.body.appendChild(s));
-          }
+
+            if (typeof Tally !== "undefined") {
+              loadEmbeds();
+            } else if (
+              document.querySelector(`script[src="${tallyScriptUrl}"]`) === null
+            ) {
+              const script = document.createElement("script");
+              script.src = tallyScriptUrl;
+              script.onload = loadEmbeds;
+              script.onerror = loadEmbeds;
+              document.body.appendChild(script);
+            }
+          };
+
+          initTallyEmbed();
         </script>
       </div>
     </section>
@@ -994,7 +1033,17 @@
         if ("scrollRestoration" in history) {
           history.scrollRestoration = "manual";
         }
-        window.scrollTo(0, 0);
+
+        if (window.location.hash) {
+          const target = document.querySelector(window.location.hash);
+          if (target !== null) {
+            setTimeout(() => {
+              target.scrollIntoView({ behavior: "smooth" });
+            }, 100);
+          }
+        } else {
+          window.scrollTo(0, 0);
+        }
 
         initFAQ();
         initNavScroll();
