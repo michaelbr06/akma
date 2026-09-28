@@ -1,5 +1,10 @@
 # Change Log
 
+## [2026-09-28] - Removed Message for the Couple Link from Navbar
+- Inspected all HTML files across the project (`index.html`, `attire.html`, `entourage.html`, `registry.html`, `rustans.html`, `sm-store.html`) to verify navigation bar links.
+- Removed the "Message for the Couple" link from the navbar in `index.html`, aligning its menu with all other pages ("Home", "Attire", "Registry").
+- Restored standard navbar padding, font size, and spacing in `index.html`.
+
 ## [2026-09-28] - Embedded Tally Message Form and Added Navigation Anchor
 - Embedded the Tally message form iframe directly into the Message for the Couple section in `index.html` with dynamic height resizing via the Tally widget embed script.
 - Added fallback handling to load the iframe source directly if the Tally script is unavailable.
