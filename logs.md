@@ -1,5 +1,11 @@
 # Change Log
 
+## [2026-09-28] - Embedded Tally Message Form and Added Navigation Anchor
+- Embedded the Tally message form iframe directly into the Message for the Couple section in `index.html` with dynamic height resizing via the Tally widget embed script.
+- Added fallback handling to load the iframe source directly if the Tally script is unavailable.
+- Added a "Message for the Couple" navigation link in the top menu bar with responsive font size and margins for mobile and desktop screens.
+- Added scroll margin to the message section and enabled smooth hash scrolling on page load.
+
 ## [2026-09-04] - Replaced RSVP Section with Tally Message Link
 - Replaced the RSVP section and Google Form embed in `index.html` with a "Message for the Couple" section containing a prominent button linking to the Tally message form (`https://tally.so/r/EkOyxq`).
 - Styled the `.btn` component with responsive padding, hover transition, and uppercase typography matching the wedding theme accent color (`var(--color-accent)`).
