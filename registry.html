@@ -31,7 +31,11 @@
 
       body {
         font-family: var(--secondary-sans);
-        background-color: var(--color-bg);
+        background:
+          linear-gradient(rgba(253, 251, 247, 0.6), rgba(253, 251, 247, 0.6)),
+          url("Screenshot 2026-05-24 at 15.21.13.png") no-repeat center
+            center fixed;
+        background-size: cover;
         color: var(--color-text);
         line-height: 1.6;
         text-align: center;
@@ -197,9 +201,9 @@
       }
 
       .footer-monogram {
-        width: 100px;
+        width: clamp(150px, 35vw, 220px);
         height: auto;
-        margin: 0 auto 1.5rem auto;
+        margin: 0 auto;
         display: block;
         opacity: 1;
         mix-blend-mode: multiply;
@@ -209,6 +213,11 @@
       @media (min-width: 768px) {
         h1 {
           font-size: 4rem;
+        }
+
+        /* Footer Monogram Desktop */
+        .footer-monogram {
+          width: clamp(220px, 18vw, 280px);
         }
       }
     </style>
@@ -260,8 +269,13 @@
       </div>
     </section>
 
+    <!-- Footer -->
     <footer>
-      <p>AK • MA • 2026</p>
+      <img
+        src="monogram-svg.svg"
+        alt="Alaine & Michael Monogram"
+        class="footer-monogram"
+      />
     </footer>
 
     <script>

@@ -31,7 +31,11 @@
 
       body {
         font-family: var(--secondary-sans);
-        background-color: var(--color-bg);
+        background:
+          linear-gradient(rgba(253, 251, 247, 0.6), rgba(253, 251, 247, 0.6)),
+          url("Screenshot 2026-05-24 at 15.21.13.png") no-repeat center
+            center fixed;
+        background-size: cover;
         color: var(--color-text);
         line-height: 1.6;
         text-align: center;
@@ -83,6 +87,11 @@
         position: sticky;
         top: 0;
         z-index: 1000;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      nav.nav-hidden {
+        transform: translateY(-100%);
       }
 
       nav a {
@@ -199,6 +208,15 @@
         text-transform: uppercase;
       }
 
+      .footer-monogram {
+        width: clamp(150px, 35vw, 220px);
+        height: auto;
+        margin: 0 auto;
+        display: block;
+        opacity: 1;
+        mix-blend-mode: multiply;
+      }
+
       /* --- Responsive Media Queries --- */
       @media (min-width: 768px) {
         h1 {
@@ -207,6 +225,11 @@
 
         .attire-grid {
           grid-template-columns: repeat(2, 1fr);
+        }
+
+        /* Footer Monogram Desktop */
+        .footer-monogram {
+          width: clamp(220px, 18vw, 280px);
         }
       }
     </style>
@@ -294,8 +317,38 @@
       </div>
     </section>
 
+    <!-- Footer -->
     <footer>
-      <p>AK • MA • 2026</p>
+      <img
+        src="monogram-svg.svg"
+        alt="Alaine & Michael Monogram"
+        class="footer-monogram"
+      />
     </footer>
+
+    <script>
+      /**
+       * Initializes the navigation bar scroll behavior.
+       * Hides the nav bar on scroll down and shows it on scroll up.
+       */
+      const initNavScroll = () => {
+        const nav = document.querySelector("nav");
+        let lastScrollY = window.scrollY;
+
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > lastScrollY && window.scrollY > 100) {
+            // Scrolling down
+            nav.classList.add("nav-hidden");
+          } else {
+            // Scrolling up
+            nav.classList.remove("nav-hidden");
+          }
+          lastScrollY = window.scrollY;
+        });
+      };
+
+      // Initialize component when DOM is ready
+      document.addEventListener("DOMContentLoaded", initNavScroll);
+    </script>
   </body>
 </html>

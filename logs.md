@@ -1,5 +1,28 @@
 # Change Log
 
+## [2026-10-04] - Restored FAQ Section Accordion Animations
+- Reverted the FAQ accordion transition animations in `index.html`.
+- Restored `transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.4s ease` on `.faq-answer` for smooth sliding open/close.
+- Restored `transition: transform 0.3s ease` on `.faq-question::after` for the rotation animation between '+' and '×'.
+
+## [2026-10-04] - Applied Fixed Background and Responsive Monogram Footer to Attire and Registry Pages
+- Applied the fixed garden hero background (`Screenshot 2026-05-24 at 15.21.13.png`) with semi-transparent warm overlay to `body` in both `attire.html` and `registry.html`.
+- Updated footer markup across `attire.html` and `registry.html` to display the monogram SVG logo (`monogram-svg.svg`), matching `index.html`.
+- Configured `.footer-monogram` responsive clamp sizing (`clamp(150px, 35vw, 220px)` on mobile and `clamp(220px, 18vw, 280px)` on desktop) across `attire.html` and `registry.html`.
+
+## [2026-10-04] - Restored Nav Bar Scroll Animations Across Index, Attire, and Registry Pages
+- Restored smooth scroll hide/show animation (`transition: transform 0.3s ease-in-out` and `.nav-hidden`) on the navigation bar in `index.html`.
+- Re-added `initNavScroll` event listener in `index.html` to slide the navbar out of view when scrolling down and bring it back when scrolling up.
+- Implemented the matching navbar scroll animation and `initNavScroll` script in `attire.html`.
+- Verified that `registry.html` already maintains the consistent navbar scroll animation styling and behavior.
+
+## [2026-10-04] - Made Background Fixed and Removed Animations
+- Configured a single fixed background with warm semi-transparent gradient overlay on `body` (`Screenshot 2026-05-24 at 15.21.13.png`) with `fixed` attachment and `background-size: cover`.
+- Removed repeated background images from `.hero` and `section.container`, eliminating per-section repetition and allowing content to scroll over a single, stationary garden background.
+- Removed scroll hide/show animation and transition on the navigation bar, keeping it statically sticky at the top.
+- Removed CSS transitions and hover transforms from `.btn`, FAQ accordion questions, and FAQ answers for clean, instantaneous, animation-free interaction.
+- Removed smooth scroll behavior from JavaScript hash navigation.
+
 ## [2026-09-28] - Removed Message for the Couple Link from Navbar
 - Inspected all HTML files across the project (`index.html`, `attire.html`, `entourage.html`, `registry.html`, `rustans.html`, `sm-store.html`) to verify navigation bar links.
 - Removed the "Message for the Couple" link from the navbar in `index.html`, aligning its menu with all other pages ("Home", "Attire", "Registry").
